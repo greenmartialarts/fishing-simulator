@@ -690,6 +690,8 @@ draw(){
   ctx.arc(this.w*0.3, -this.h*0.1, Math.max(2.5, this.h*0.027), 0, Math.PI*2);
   ctx.fill();
 
+
+
   if(f.id >= 4){
     text(f.name, 0, -this.h*0.75, 16, 'center', '#fff');
   }
@@ -748,11 +750,11 @@ function launch(){
   if(harpoon.status!=='still') return;
   harpoon.status='out';
   harpoon.tipX=harpoon.x;
-  harpoon.tipY = harpoon.y + 20;
+  harpoon.tipY = 170;
 }
 function updateHarpoon(dt){
   if (!harpoon) return;
-  if (!harpoon.active) return;
+
   const sy=160;
   if(harpoon.status==='still'){
     // Mouse-controlled horizontal aiming. It still drops straight down when fired.
@@ -760,7 +762,7 @@ function updateHarpoon(dt){
     harpoon.tipX = harpoon.x; harpoon.tipY = sy;
     return;
   }
-  const step=harpoonSpeed()*dt*.06;
+  const step=harpoonSpeed()*dt* 0.18;
   if(harpoon.status==='out') harpoon.tipY += step;
   else harpoon.tipY -= step*1.15;
 
