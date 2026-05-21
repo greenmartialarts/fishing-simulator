@@ -838,7 +838,7 @@ function updateEffects(dt){
   game.messages=game.messages.filter(m=>m.life>0);
 }
 
-function spawnFish(){ game.fish=[]; const count= Math.min(18, 4+currentMap().fishBonus); for(let i=0;i<count;i++){ const f=new Fish(); f.x=rand(0,W); game.fish.push(f); } spawnChests(); }
+function spawnFish(){ game.fish=[]; const count= 8+currentMap().fishBonus; for(let i=0;i<count;i++){ const f=new Fish(); f.x=rand(0,W); game.fish.push(f); } spawnChests(); }
 function spawnChests(){ game.chests=[]; const count=currentMap().id==='bay'?1:2; for(let i=0;i<count;i++) game.chests.push(new TreasureChest()); }
 
 function drawBackground(dt){
