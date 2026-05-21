@@ -751,6 +751,8 @@ function launch(){
   harpoon.tipY=160;
 }
 function updateHarpoon(dt){
+  if (!harpoon) return;
+  if (!harpoon.active) return;
   const sy=160;
   if(harpoon.status==='still'){
     // Mouse-controlled horizontal aiming. It still drops straight down when fired.
