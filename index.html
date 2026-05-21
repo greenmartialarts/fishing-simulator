@@ -74,123 +74,123 @@ const rods = [
 
 const fishTypesByMap = {
   bay: [
-    { id:1, name:'Orange Minnow', value:5, body:'#ff9f43', fin:'#ff6b35', chance:45, size:1 },
-    { id:2, name:'Blue Sardine', value:12, body:'#48dbfb', fin:'#0abde3', chance:28, size:1 },
-    { id:3, name:'Purple Bass', value:30, body:'#a55eea', fin:'#8854d0', chance:16, size:1.1 },
-    { id:4, name:'Golden Bay Fish', value:120, body:'#feca57', fin:'#ff9f43', chance:8, size:1.35 },
-    { id:5, name:'Rainbow Minnow', value:500, body:'#ffffff', fin:'#70a1ff', chance:3, size:1.45, rainbow:true }
+    { id:1, name:'Orange Minnow', value:5, body:'#ff9f43', fin:'#ff6b35', chance:45, size:1, shape:'round', pattern:'none', tail:'fork' },
+    { id:2, name:'Blue Sardine', value:12, body:'#48dbfb', fin:'#0abde3', chance:28, size:1, shape:'long', pattern:'stripe', tail:'fork' },
+    { id:3, name:'Purple Bass', value:30, body:'#a55eea', fin:'#8854d0', chance:16, size:1.1, shape:'tall', pattern:'spot', tail:'triangle' },
+    { id:4, name:'Golden Bay Fish', value:120, body:'#feca57', fin:'#ff9f43', chance:8, size:1.35, shape:'tall', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Minnow', value:500, body:'#ffffff', fin:'#70a1ff', chance:3, size:1.45, shape:'round', pattern:'rainbow', tail:'fork', rainbow:true, glow:true }
   ],
 
   reef: [
-    { id:1, name:'Coral Clownfish', value:18, body:'#ff7675', fin:'#fd79a8', chance:42, size:1 },
-    { id:2, name:'Reef Tang', value:35, body:'#00cec9', fin:'#0984e3', chance:28, size:1.05 },
-    { id:3, name:'Pink Angelfish', value:80, body:'#fd79a8', fin:'#e84393', chance:17, size:1.15 },
-    { id:4, name:'Golden Coral Fish', value:300, body:'#ffeaa7', fin:'#fdcb6e', chance:9, size:1.4 },
-    { id:5, name:'Rainbow Reef Fish', value:1100, body:'#ffffff', fin:'#a29bfe', chance:4, size:1.55, rainbow:true }
+    { id:1, name:'Coral Clownfish', value:18, body:'#ff7675', fin:'#fd79a8', chance:42, size:1, shape:'round', pattern:'stripe', tail:'fan' },
+    { id:2, name:'Reef Tang', value:35, body:'#00cec9', fin:'#0984e3', chance:28, size:1.05, shape:'tall', pattern:'dot', tail:'fork' },
+    { id:3, name:'Pink Angelfish', value:80, body:'#fd79a8', fin:'#e84393', chance:17, size:1.15, shape:'tall', pattern:'finstripe', tail:'fan' },
+    { id:4, name:'Golden Coral Fish', value:300, body:'#ffeaa7', fin:'#fdcb6e', chance:9, size:1.4, shape:'tall', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Reef Fish', value:1100, body:'#ffffff', fin:'#a29bfe', chance:4, size:1.55, shape:'round', pattern:'rainbow', tail:'fan', rainbow:true, glow:true }
   ],
 
   deep: [
-    { id:1, name:'Deep Lanternfish', value:45, body:'#2d3436', fin:'#74b9ff', chance:40, size:1 },
-    { id:2, name:'Abyss Eel', value:95, body:'#636e72', fin:'#0984e3', chance:27, size:1.2 },
-    { id:3, name:'Shadow Tuna', value:190, body:'#130f40', fin:'#5352ed', chance:18, size:1.35 },
-    { id:4, name:'Golden Abyss Fish', value:750, body:'#f9ca24', fin:'#f0932b', chance:10, size:1.55 },
-    { id:5, name:'Rainbow Deep Fish', value:2800, body:'#ffffff', fin:'#686de0', chance:5, size:1.7, rainbow:true }
+    { id:1, name:'Deep Lanternfish', value:45, body:'#2d3436', fin:'#74b9ff', chance:40, size:1, shape:'long', pattern:'glowdot', tail:'fork', glow:true },
+    { id:2, name:'Abyss Eel', value:95, body:'#636e72', fin:'#0984e3', chance:27, size:1.2, shape:'eel', pattern:'line', tail:'spike' },
+    { id:3, name:'Shadow Tuna', value:190, body:'#130f40', fin:'#5352ed', chance:18, size:1.35, shape:'long', pattern:'shadow', tail:'fork' },
+    { id:4, name:'Golden Abyss Fish', value:750, body:'#f9ca24', fin:'#f0932b', chance:10, size:1.55, shape:'shark', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Deep Fish', value:2800, body:'#ffffff', fin:'#686de0', chance:5, size:1.7, shape:'eel', pattern:'rainbow', tail:'spike', rainbow:true, glow:true }
   ],
 
   lava: [
-    { id:1, name:'Ember Fish', value:130, body:'#ff6b35', fin:'#ee5253', chance:38, size:1 },
-    { id:2, name:'Magma Snapper', value:280, body:'#ff4757', fin:'#c0392b', chance:28, size:1.15 },
-    { id:3, name:'Volcano Pike', value:560, body:'#b33939', fin:'#ff9f43', chance:19, size:1.35 },
-    { id:4, name:'Golden Flame Fish', value:2100, body:'#feca57', fin:'#ff9f43', chance:10, size:1.6 },
-    { id:5, name:'Rainbow Lava Fish', value:8000, body:'#ffffff', fin:'#ff6b81', chance:5, size:1.8, rainbow:true }
+    { id:1, name:'Ember Fish', value:130, body:'#ff6b35', fin:'#ee5253', chance:38, size:1, shape:'round', pattern:'lava', tail:'triangle' },
+    { id:2, name:'Magma Snapper', value:280, body:'#ff4757', fin:'#c0392b', chance:28, size:1.15, shape:'tall', pattern:'crack', tail:'triangle' },
+    { id:3, name:'Volcano Pike', value:560, body:'#b33939', fin:'#ff9f43', chance:19, size:1.35, shape:'spiky', pattern:'lava', tail:'spike' },
+    { id:4, name:'Golden Flame Fish', value:2100, body:'#feca57', fin:'#ff9f43', chance:10, size:1.6, shape:'spiky', pattern:'gold', tail:'spike', golden:true },
+    { id:5, name:'Rainbow Lava Fish', value:8000, body:'#ffffff', fin:'#ff6b81', chance:5, size:1.8, shape:'spiky', pattern:'rainbow', tail:'spike', rainbow:true, glow:true }
   ],
 
   ice: [
-    { id:1, name:'Frost Minnow', value:340, body:'#dff9fb', fin:'#7ed6df', chance:38, size:1 },
-    { id:2, name:'Ice Trout', value:700, body:'#c7ecee', fin:'#22a6b3', chance:28, size:1.15 },
-    { id:3, name:'Frozen Shark', value:1450, body:'#95afc0', fin:'#535c68', chance:18, size:1.55 },
-    { id:4, name:'Golden Ice Fish', value:5200, body:'#f6e58d', fin:'#f9ca24', chance:11, size:1.65 },
-    { id:5, name:'Rainbow Frost Fish', value:19000, body:'#ffffff', fin:'#badc58', chance:5, size:1.9, rainbow:true }
+    { id:1, name:'Frost Minnow', value:340, body:'#dff9fb', fin:'#7ed6df', chance:38, size:1, shape:'round', pattern:'ice', tail:'fork' },
+    { id:2, name:'Ice Trout', value:700, body:'#c7ecee', fin:'#22a6b3', chance:28, size:1.15, shape:'long', pattern:'ice', tail:'fork' },
+    { id:3, name:'Frozen Shark', value:1450, body:'#95afc0', fin:'#535c68', chance:18, size:1.55, shape:'shark', pattern:'ice', tail:'fork' },
+    { id:4, name:'Golden Ice Fish', value:5200, body:'#f6e58d', fin:'#f9ca24', chance:11, size:1.65, shape:'tall', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Frost Fish', value:19000, body:'#ffffff', fin:'#badc58', chance:5, size:1.9, shape:'long', pattern:'rainbow', tail:'fork', rainbow:true, glow:true }
   ],
 
   mangrove: [
-    { id:1, name:'Swamp Guppy', value:800, body:'#55efc4', fin:'#00b894', chance:37, size:1 },
-    { id:2, name:'Mud Catfish', value:1600, body:'#6ab04c', fin:'#badc58', chance:28, size:1.2 },
-    { id:3, name:'Vine Bass', value:3300, body:'#218c74', fin:'#33d9b2', chance:19, size:1.35 },
-    { id:4, name:'Golden Swamp Fish', value:12000, body:'#f9ca24', fin:'#f0932b', chance:11, size:1.65 },
-    { id:5, name:'Rainbow Mangrove Fish', value:43000, body:'#ffffff', fin:'#00cec9', chance:5, size:1.9, rainbow:true }
+    { id:1, name:'Swamp Guppy', value:800, body:'#55efc4', fin:'#00b894', chance:37, size:1, shape:'round', pattern:'leaf', tail:'fan' },
+    { id:2, name:'Mud Catfish', value:1600, body:'#6ab04c', fin:'#badc58', chance:28, size:1.2, shape:'eel', pattern:'mud', tail:'round' },
+    { id:3, name:'Vine Bass', value:3300, body:'#218c74', fin:'#33d9b2', chance:19, size:1.35, shape:'tall', pattern:'leaf', tail:'fan' },
+    { id:4, name:'Golden Swamp Fish', value:12000, body:'#f9ca24', fin:'#f0932b', chance:11, size:1.65, shape:'tall', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Mangrove Fish', value:43000, body:'#ffffff', fin:'#00cec9', chance:5, size:1.9, shape:'eel', pattern:'rainbow', tail:'round', rainbow:true, glow:true }
   ],
 
   crystal: [
-    { id:1, name:'Crystal Minnow', value:1900, body:'#81ecec', fin:'#00cec9', chance:36, size:1 },
-    { id:2, name:'Glassfin', value:3800, body:'#dff9fb', fin:'#7ed6df', chance:28, size:1.15 },
-    { id:3, name:'Diamond Bass', value:7600, body:'#74b9ff', fin:'#0984e3', chance:20, size:1.4 },
-    { id:4, name:'Golden Crystal Fish', value:27000, body:'#ffeaa7', fin:'#fdcb6e', chance:11, size:1.7 },
-    { id:5, name:'Rainbow Crystal Fish', value:98000, body:'#ffffff', fin:'#a29bfe', chance:5, size:1.95, rainbow:true }
+    { id:1, name:'Crystal Minnow', value:1900, body:'#81ecec', fin:'#00cec9', chance:36, size:1, shape:'round', pattern:'crystal', tail:'fork' },
+    { id:2, name:'Glassfin', value:3800, body:'#dff9fb', fin:'#7ed6df', chance:28, size:1.15, shape:'tall', pattern:'crystal', tail:'fan' },
+    { id:3, name:'Diamond Bass', value:7600, body:'#74b9ff', fin:'#0984e3', chance:20, size:1.4, shape:'spiky', pattern:'crystal', tail:'fork' },
+    { id:4, name:'Golden Crystal Fish', value:27000, body:'#ffeaa7', fin:'#fdcb6e', chance:11, size:1.7, shape:'spiky', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Crystal Fish', value:98000, body:'#ffffff', fin:'#a29bfe', chance:5, size:1.95, shape:'spiky', pattern:'rainbow', tail:'fork', rainbow:true, glow:true }
   ],
 
   storm: [
-    { id:1, name:'Storm Minnow', value:4800, body:'#636e72', fin:'#74b9ff', chance:36, size:1 },
-    { id:2, name:'Thunder Eel', value:9200, body:'#2d3436', fin:'#ffeaa7', chance:27, size:1.25 },
-    { id:3, name:'Lightning Marlin', value:18500, body:'#5352ed', fin:'#f9ca24', chance:20, size:1.55 },
-    { id:4, name:'Golden Storm Fish', value:68000, body:'#feca57', fin:'#ff9f43', chance:12, size:1.75 },
-    { id:5, name:'Rainbow Storm Fish', value:250000, body:'#ffffff', fin:'#686de0', chance:5, size:2, rainbow:true }
+    { id:1, name:'Storm Minnow', value:4800, body:'#636e72', fin:'#74b9ff', chance:36, size:1, shape:'long', pattern:'bolt', tail:'fork' },
+    { id:2, name:'Thunder Eel', value:9200, body:'#2d3436', fin:'#ffeaa7', chance:27, size:1.25, shape:'eel', pattern:'bolt', tail:'spike' },
+    { id:3, name:'Lightning Marlin', value:18500, body:'#5352ed', fin:'#f9ca24', chance:20, size:1.55, shape:'shark', pattern:'bolt', tail:'fork' },
+    { id:4, name:'Golden Storm Fish', value:68000, body:'#feca57', fin:'#ff9f43', chance:12, size:1.75, shape:'shark', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Storm Fish', value:250000, body:'#ffffff', fin:'#686de0', chance:5, size:2, shape:'eel', pattern:'rainbow', tail:'spike', rainbow:true, glow:true }
   ],
 
   jungle: [
-    { id:1, name:'Jungle Guppy', value:12000, body:'#badc58', fin:'#6ab04c', chance:36, size:1 },
-    { id:2, name:'Leaf Snapper', value:24000, body:'#55efc4', fin:'#00b894', chance:27, size:1.2 },
-    { id:3, name:'Tiger Bass', value:48000, body:'#f0932b', fin:'#eb4d4b', chance:20, size:1.45 },
-    { id:4, name:'Golden Jungle Fish', value:180000, body:'#f9ca24', fin:'#f0932b', chance:12, size:1.75 },
-    { id:5, name:'Rainbow Jungle Fish', value:660000, body:'#ffffff', fin:'#badc58', chance:5, size:2, rainbow:true }
+    { id:1, name:'Jungle Guppy', value:12000, body:'#badc58', fin:'#6ab04c', chance:36, size:1, shape:'round', pattern:'leaf', tail:'fan' },
+    { id:2, name:'Leaf Snapper', value:24000, body:'#55efc4', fin:'#00b894', chance:27, size:1.2, shape:'tall', pattern:'leaf', tail:'fan' },
+    { id:3, name:'Tiger Bass', value:48000, body:'#f0932b', fin:'#eb4d4b', chance:20, size:1.45, shape:'long', pattern:'tiger', tail:'fork' },
+    { id:4, name:'Golden Jungle Fish', value:180000, body:'#f9ca24', fin:'#f0932b', chance:12, size:1.75, shape:'tall', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Jungle Fish', value:660000, body:'#ffffff', fin:'#badc58', chance:5, size:2, shape:'long', pattern:'rainbow', tail:'fork', rainbow:true, glow:true }
   ],
 
   toxic: [
-    { id:1, name:'Toxic Minnow', value:32000, body:'#7cff00', fin:'#badc58', chance:35, size:1 },
-    { id:2, name:'Acid Eel', value:65000, body:'#b8ff00', fin:'#44bd32', chance:27, size:1.25 },
-    { id:3, name:'Mutant Bass', value:130000, body:'#009432', fin:'#A3CB38', chance:21, size:1.55 },
-    { id:4, name:'Golden Toxic Fish', value:480000, body:'#f9ca24', fin:'#f0932b', chance:12, size:1.8 },
-    { id:5, name:'Rainbow Toxic Fish', value:1800000, body:'#ffffff', fin:'#7cff00', chance:5, size:2.05, rainbow:true }
+    { id:1, name:'Toxic Minnow', value:32000, body:'#7cff00', fin:'#badc58', chance:35, size:1, shape:'round', pattern:'toxic', tail:'triangle', glow:true },
+    { id:2, name:'Acid Eel', value:65000, body:'#b8ff00', fin:'#44bd32', chance:27, size:1.25, shape:'eel', pattern:'toxic', tail:'round', glow:true },
+    { id:3, name:'Mutant Bass', value:130000, body:'#009432', fin:'#A3CB38', chance:21, size:1.55, shape:'spiky', pattern:'toxic', tail:'spike', glow:true },
+    { id:4, name:'Golden Toxic Fish', value:480000, body:'#f9ca24', fin:'#f0932b', chance:12, size:1.8, shape:'spiky', pattern:'gold', tail:'spike', golden:true },
+    { id:5, name:'Rainbow Toxic Fish', value:1800000, body:'#ffffff', fin:'#7cff00', chance:5, size:2.05, shape:'eel', pattern:'rainbow', tail:'round', rainbow:true, glow:true }
   ],
 
   desert: [
-    { id:1, name:'Oasis Minnow', value:85000, body:'#1ecbe1', fin:'#22a6b3', chance:35, size:1 },
-    { id:2, name:'Sandscale Fish', value:170000, body:'#f6e58d', fin:'#e1b12c', chance:27, size:1.2 },
-    { id:3, name:'Mirage Ray', value:340000, body:'#ffbe76', fin:'#f0932b', chance:21, size:1.55 },
-    { id:4, name:'Golden Oasis Fish', value:1250000, body:'#feca57', fin:'#ff9f43', chance:12, size:1.85 },
-    { id:5, name:'Rainbow Oasis Fish', value:4700000, body:'#ffffff', fin:'#00cec9', chance:5, size:2.1, rainbow:true }
+    { id:1, name:'Oasis Minnow', value:85000, body:'#1ecbe1', fin:'#22a6b3', chance:35, size:1, shape:'round', pattern:'wave', tail:'fork' },
+    { id:2, name:'Sandscale Fish', value:170000, body:'#f6e58d', fin:'#e1b12c', chance:27, size:1.2, shape:'tall', pattern:'sand', tail:'fan' },
+    { id:3, name:'Mirage Ray', value:340000, body:'#ffbe76', fin:'#f0932b', chance:21, size:1.55, shape:'ray', pattern:'sand', tail:'whip' },
+    { id:4, name:'Golden Oasis Fish', value:1250000, body:'#feca57', fin:'#ff9f43', chance:12, size:1.85, shape:'ray', pattern:'gold', tail:'whip', golden:true },
+    { id:5, name:'Rainbow Oasis Fish', value:4700000, body:'#ffffff', fin:'#00cec9', chance:5, size:2.1, shape:'ray', pattern:'rainbow', tail:'whip', rainbow:true, glow:true }
   ],
 
   moon: [
-    { id:1, name:'Moon Minnow', value:230000, body:'#dcdde1', fin:'#7f8fa6', chance:35, size:1 },
-    { id:2, name:'Lunar Eel', value:460000, body:'#9c88ff', fin:'#8c7ae6', chance:27, size:1.25 },
-    { id:3, name:'Star Bass', value:920000, body:'#273c75', fin:'#fbc531', chance:21, size:1.55 },
-    { id:4, name:'Golden Moon Fish', value:3400000, body:'#f9ca24', fin:'#f0932b', chance:12, size:1.85 },
-    { id:5, name:'Rainbow Moon Fish', value:13000000, body:'#ffffff', fin:'#9c88ff', chance:5, size:2.15, rainbow:true }
+    { id:1, name:'Moon Minnow', value:230000, body:'#dcdde1', fin:'#7f8fa6', chance:35, size:1, shape:'round', pattern:'moon', tail:'fork' },
+    { id:2, name:'Lunar Eel', value:460000, body:'#9c88ff', fin:'#8c7ae6', chance:27, size:1.25, shape:'eel', pattern:'moon', tail:'spike', glow:true },
+    { id:3, name:'Star Bass', value:920000, body:'#273c75', fin:'#fbc531', chance:21, size:1.55, shape:'tall', pattern:'star', tail:'fan' },
+    { id:4, name:'Golden Moon Fish', value:3400000, body:'#f9ca24', fin:'#f0932b', chance:12, size:1.85, shape:'tall', pattern:'gold', tail:'fan', golden:true },
+    { id:5, name:'Rainbow Moon Fish', value:13000000, body:'#ffffff', fin:'#9c88ff', chance:5, size:2.15, shape:'eel', pattern:'rainbow', tail:'spike', rainbow:true, glow:true }
   ],
 
   void: [
-    { id:1, name:'Void Minnow', value:650000, body:'#2c003e', fin:'#5f27cd', chance:34, size:1 },
-    { id:2, name:'Dark Matter Eel', value:1300000, body:'#130f40', fin:'#341f97', chance:27, size:1.3 },
-    { id:3, name:'Blackhole Shark', value:2600000, body:'#000000', fin:'#6c5ce7', chance:22, size:1.7 },
-    { id:4, name:'Golden Void Fish', value:9500000, body:'#feca57', fin:'#ff9f43', chance:12, size:1.9 },
-    { id:5, name:'Rainbow Void Fish', value:36000000, body:'#ffffff', fin:'#5f27cd', chance:5, size:2.2, rainbow:true }
+    { id:1, name:'Void Minnow', value:650000, body:'#2c003e', fin:'#5f27cd', chance:34, size:1, shape:'long', pattern:'void', tail:'spike' },
+    { id:2, name:'Dark Matter Eel', value:1300000, body:'#130f40', fin:'#341f97', chance:27, size:1.3, shape:'eel', pattern:'void', tail:'spike', glow:true },
+    { id:3, name:'Blackhole Shark', value:2600000, body:'#000000', fin:'#6c5ce7', chance:22, size:1.7, shape:'shark', pattern:'star', tail:'fork' },
+    { id:4, name:'Golden Void Fish', value:9500000, body:'#feca57', fin:'#ff9f43', chance:12, size:1.9, shape:'shark', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Void Fish', value:36000000, body:'#ffffff', fin:'#5f27cd', chance:5, size:2.2, shape:'eel', pattern:'rainbow', tail:'spike', rainbow:true, glow:true }
   ],
 
   heaven: [
-    { id:1, name:'Cloud Minnow', value:1800000, body:'#ffffff', fin:'#74b9ff', chance:34, size:1 },
-    { id:2, name:'Angel Fish', value:3600000, body:'#dff9fb', fin:'#f6e58d', chance:27, size:1.25 },
-    { id:3, name:'Sky Whale', value:7200000, body:'#7ed6df', fin:'#22a6b3', chance:22, size:1.8 },
-    { id:4, name:'Golden Heaven Fish', value:26000000, body:'#ffeaa7', fin:'#fdcb6e', chance:12, size:2 },
-    { id:5, name:'Rainbow Heaven Fish', value:100000000, body:'#ffffff', fin:'#ff9ff3', chance:5, size:2.25, rainbow:true }
+    { id:1, name:'Cloud Minnow', value:1800000, body:'#ffffff', fin:'#74b9ff', chance:34, size:1, shape:'round', pattern:'cloud', tail:'fan' },
+    { id:2, name:'Angel Fish', value:3600000, body:'#dff9fb', fin:'#f6e58d', chance:27, size:1.25, shape:'tall', pattern:'cloud', tail:'fan', glow:true },
+    { id:3, name:'Sky Whale', value:7200000, body:'#7ed6df', fin:'#22a6b3', chance:22, size:1.8, shape:'whale', pattern:'wave', tail:'whale' },
+    { id:4, name:'Golden Heaven Fish', value:26000000, body:'#ffeaa7', fin:'#fdcb6e', chance:12, size:2, shape:'whale', pattern:'gold', tail:'whale', golden:true },
+    { id:5, name:'Rainbow Heaven Fish', value:100000000, body:'#ffffff', fin:'#ff9ff3', chance:5, size:2.25, shape:'angel', pattern:'rainbow', tail:'fan', rainbow:true, glow:true }
   ],
 
   galaxy: [
-    { id:1, name:'Galaxy Minnow', value:5000000, body:'#6c5ce7', fin:'#a29bfe', chance:33, size:1 },
-    { id:2, name:'Nebula Eel', value:10000000, body:'#e84393', fin:'#fd79a8', chance:27, size:1.3 },
-    { id:3, name:'Cosmic Shark', value:22000000, body:'#0984e3', fin:'#00cec9', chance:23, size:1.8 },
-    { id:4, name:'Golden Galaxy Fish', value:85000000, body:'#feca57', fin:'#ff9f43', chance:12, size:2 },
-    { id:5, name:'Rainbow Galaxy Fish', value:350000000, body:'#ffffff', fin:'#a29bfe', chance:5, size:2.35, rainbow:true }
+    { id:1, name:'Galaxy Minnow', value:5000000, body:'#6c5ce7', fin:'#a29bfe', chance:33, size:1, shape:'round', pattern:'star', tail:'fork', glow:true },
+    { id:2, name:'Nebula Eel', value:10000000, body:'#e84393', fin:'#fd79a8', chance:27, size:1.3, shape:'eel', pattern:'galaxy', tail:'spike', glow:true },
+    { id:3, name:'Cosmic Shark', value:22000000, body:'#0984e3', fin:'#00cec9', chance:23, size:1.8, shape:'shark', pattern:'star', tail:'fork', glow:true },
+    { id:4, name:'Golden Galaxy Fish', value:85000000, body:'#feca57', fin:'#ff9f43', chance:12, size:2, shape:'shark', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Galaxy Fish', value:350000000, body:'#ffffff', fin:'#a29bfe', chance:5, size:2.35, shape:'angel', pattern:'rainbow', tail:'fan', rainbow:true, glow:true }
   ]
 };
 
@@ -276,18 +276,331 @@ class Button{
 }
 let buttons=[];
 function addButton(x,y,w,h,label,fn,color){ const b=new Button(x,y,w,h,label,fn); b.color=color; buttons.push(b); return b; }
+function fishGradient(f, w, h){
+  if(f.rainbow){
+    const g = ctx.createLinearGradient(-w/2, -h/2, w/2, h/2);
+    g.addColorStop(0, '#ff4757');
+    g.addColorStop(0.2, '#ffa502');
+    g.addColorStop(0.4, '#2ed573');
+    g.addColorStop(0.6, '#1e90ff');
+    g.addColorStop(0.8, '#a55eea');
+    g.addColorStop(1, '#ff6b81');
+    return g;
+  }
+  const g = ctx.createLinearGradient(-w/2, -h/2, w/2, h/2);
+  g.addColorStop(0, 'white');
+  g.addColorStop(0.2, f.body);
+  g.addColorStop(1, f.fin);
+  return g;
+}
 
+function traceFishBody(shape, w, h){
+  ctx.beginPath();
+
+  if(shape === 'long'){
+    ctx.ellipse(0, 0, w*0.5, h*0.32, 0, 0, Math.PI*2);
+  }else if(shape === 'tall'){
+    ctx.ellipse(-w*0.03, 0, w*0.4, h*0.48, 0, 0, Math.PI*2);
+  }else if(shape === 'eel'){
+    ctx.moveTo(-w*0.5, -h*0.18);
+    ctx.quadraticCurveTo(-w*0.15, -h*0.35, w*0.42, -h*0.14);
+    ctx.quadraticCurveTo(w*0.56, 0, w*0.42, h*0.14);
+    ctx.quadraticCurveTo(-w*0.15, h*0.35, -w*0.5, h*0.18);
+    ctx.quadraticCurveTo(-w*0.6, 0, -w*0.5, -h*0.18);
+  }else if(shape === 'shark'){
+    ctx.moveTo(-w*0.48, 0);
+    ctx.quadraticCurveTo(-w*0.15, -h*0.44, w*0.25, -h*0.22);
+    ctx.lineTo(w*0.52, -h*0.05);
+    ctx.lineTo(w*0.56, 0);
+    ctx.lineTo(w*0.52, h*0.05);
+    ctx.lineTo(w*0.25, h*0.22);
+    ctx.quadraticCurveTo(-w*0.15, h*0.44, -w*0.48, 0);
+  }else if(shape === 'ray'){
+    ctx.moveTo(-w*0.4, 0);
+    ctx.quadraticCurveTo(-w*0.15, -h*0.5, w*0.25, -h*0.22);
+    ctx.quadraticCurveTo(w*0.4, 0, w*0.25, h*0.22);
+    ctx.quadraticCurveTo(-w*0.15, h*0.5, -w*0.4, 0);
+  }else if(shape === 'whale'){
+    ctx.ellipse(-w*0.02, 0, w*0.5, h*0.38, 0, 0, Math.PI*2);
+  }else if(shape === 'angel'){
+    ctx.moveTo(-w*0.35, 0);
+    ctx.quadraticCurveTo(-w*0.15, -h*0.55, w*0.18, -h*0.28);
+    ctx.quadraticCurveTo(w*0.45, 0, w*0.18, h*0.28);
+    ctx.quadraticCurveTo(-w*0.15, h*0.55, -w*0.35, 0);
+  }else if(shape === 'spiky'){
+    ctx.moveTo(-w*0.45, 0);
+    ctx.lineTo(-w*0.2, -h*0.42);
+    ctx.lineTo(0, -h*0.3);
+    ctx.lineTo(w*0.25, -h*0.18);
+    ctx.lineTo(w*0.46, 0);
+    ctx.lineTo(w*0.25, h*0.18);
+    ctx.lineTo(0, h*0.3);
+    ctx.lineTo(-w*0.2, h*0.42);
+    ctx.closePath();
+  }else{
+    ctx.ellipse(0, 0, w*0.45, h*0.42, 0, 0, Math.PI*2);
+  }
+}
+
+function drawTailShape(tail, w, h, color){
+  ctx.fillStyle = color;
+  ctx.beginPath();
+
+  if(tail === 'fork'){
+    ctx.moveTo(-w*0.48, 0);
+    ctx.lineTo(-w*0.78, -h*0.32);
+    ctx.lineTo(-w*0.62, -h*0.02);
+    ctx.lineTo(-w*0.78, h*0.32);
+    ctx.closePath();
+  }else if(tail === 'fan'){
+    ctx.moveTo(-w*0.45, 0);
+    ctx.lineTo(-w*0.72, -h*0.38);
+    ctx.lineTo(-w*0.75, h*0.38);
+    ctx.closePath();
+  }else if(tail === 'round'){
+    ctx.arc(-w*0.58, 0, h*0.22, 0, Math.PI*2);
+  }else if(tail === 'spike'){
+    ctx.moveTo(-w*0.46, 0);
+    ctx.lineTo(-w*0.82, -h*0.18);
+    ctx.lineTo(-w*0.82, h*0.18);
+    ctx.closePath();
+  }else if(tail === 'whip'){
+    ctx.moveTo(-w*0.38, 0);
+    ctx.quadraticCurveTo(-w*0.7, h*0.06, -w*0.95, h*0.26);
+    ctx.lineWidth = 6;
+    ctx.strokeStyle = color;
+    ctx.stroke();
+    return;
+  }else if(tail === 'whale'){
+    ctx.moveTo(-w*0.5, 0);
+    ctx.lineTo(-w*0.72, -h*0.25);
+    ctx.lineTo(-w*0.8, -h*0.02);
+    ctx.lineTo(-w*0.85, -h*0.24);
+    ctx.lineTo(-w*0.95, 0);
+    ctx.lineTo(-w*0.85, h*0.24);
+    ctx.lineTo(-w*0.8, h*0.02);
+    ctx.lineTo(-w*0.72, h*0.25);
+    ctx.closePath();
+  }else{
+    ctx.moveTo(-w*0.47, 0);
+    ctx.lineTo(-w*0.72, -h*0.32);
+    ctx.lineTo(-w*0.72, h*0.32);
+    ctx.closePath();
+  }
+
+  ctx.fill();
+}
+
+function drawFishPattern(pattern, w, h){
+  if(pattern === 'none') return;
+
+  if(pattern === 'stripe'){
+    ctx.fillStyle = 'rgba(255,255,255,.20)';
+    for(let i=-2;i<=2;i++) ctx.fillRect(-w*0.1 + i*18, -h*0.32, 8, h*0.64);
+  }
+  else if(pattern === 'spot' || pattern === 'dot'){
+    ctx.fillStyle = 'rgba(255,255,255,.25)';
+    for(let i=0;i<6;i++){
+      ctx.beginPath();
+      ctx.arc(-w*0.12 + (i%3)*22, -h*0.12 + Math.floor(i/3)*24, 5, 0, Math.PI*2);
+      ctx.fill();
+    }
+  }
+  else if(pattern === 'finstripe'){
+    ctx.strokeStyle = 'rgba(255,255,255,.28)';
+    ctx.lineWidth = 3;
+    for(let i=-1;i<=2;i++){
+      ctx.beginPath();
+      ctx.moveTo(-w*0.12 + i*18, -h*0.26);
+      ctx.lineTo(-w*0.02 + i*18, h*0.26);
+      ctx.stroke();
+    }
+  }
+  else if(pattern === 'line'){
+    ctx.strokeStyle = 'rgba(255,255,255,.25)';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(-w*0.25, 0);
+    ctx.lineTo(w*0.28, 0);
+    ctx.stroke();
+  }
+  else if(pattern === 'shadow'){
+    ctx.fillStyle = 'rgba(0,0,0,.18)';
+    ctx.fillRect(-w*0.1, -h*0.28, w*0.35, h*0.56);
+  }
+  else if(pattern === 'lava' || pattern === 'crack'){
+    ctx.strokeStyle = 'rgba(255,220,120,.45)';
+    ctx.lineWidth = 3;
+    for(let i=0;i<3;i++){
+      ctx.beginPath();
+      ctx.moveTo(-w*0.15 + i*22, -h*0.22);
+      ctx.lineTo(-w*0.05 + i*22, -h*0.02);
+      ctx.lineTo(-w*0.12 + i*22, h*0.2);
+      ctx.stroke();
+    }
+  }
+  else if(pattern === 'ice'){
+    ctx.strokeStyle = 'rgba(255,255,255,.42)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(-w*0.2, -h*0.12); ctx.lineTo(w*0.1, h*0.08);
+    ctx.moveTo(-w*0.08, -h*0.24); ctx.lineTo(w*0.18, 0);
+    ctx.moveTo(-w*0.12, h*0.2); ctx.lineTo(w*0.12, -h*0.02);
+    ctx.stroke();
+  }
+  else if(pattern === 'leaf'){
+    ctx.strokeStyle = 'rgba(255,255,255,.24)';
+    ctx.lineWidth = 3;
+    for(let i=-1;i<=2;i++){
+      ctx.beginPath();
+      ctx.moveTo(-w*0.18 + i*18, 0);
+      ctx.lineTo(-w*0.06 + i*18, -h*0.18);
+      ctx.stroke();
+    }
+  }
+  else if(pattern === 'mud'){
+    ctx.fillStyle = 'rgba(90,60,30,.22)';
+    for(let i=0;i<5;i++){
+      ctx.beginPath();
+      ctx.arc(-w*0.12 + i*16, (i%2===0?-1:1)*10, 7, 0, Math.PI*2);
+      ctx.fill();
+    }
+  }
+  else if(pattern === 'crystal'){
+    ctx.strokeStyle = 'rgba(255,255,255,.45)';
+    ctx.lineWidth = 2;
+    for(let i=0;i<4;i++){
+      ctx.beginPath();
+      ctx.moveTo(-w*0.12 + i*18, -h*0.18);
+      ctx.lineTo(-w*0.04 + i*18, 0);
+      ctx.lineTo(-w*0.12 + i*18, h*0.18);
+      ctx.stroke();
+    }
+  }
+  else if(pattern === 'bolt'){
+    ctx.strokeStyle = 'rgba(255,255,180,.55)';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(-w*0.14, -h*0.18);
+    ctx.lineTo(-w*0.02, -h*0.02);
+    ctx.lineTo(-w*0.1, h*0.02);
+    ctx.lineTo(w*0.06, h*0.2);
+    ctx.stroke();
+  }
+  else if(pattern === 'tiger'){
+    ctx.strokeStyle = 'rgba(90,40,10,.45)';
+    ctx.lineWidth = 4;
+    for(let i=-1;i<=2;i++){
+      ctx.beginPath();
+      ctx.moveTo(-w*0.16 + i*18, -h*0.24);
+      ctx.lineTo(-w*0.02 + i*18, h*0.18);
+      ctx.stroke();
+    }
+  }
+  else if(pattern === 'toxic'){
+    ctx.fillStyle = 'rgba(255,255,140,.35)';
+    for(let i=0;i<6;i++){
+      ctx.beginPath();
+      ctx.arc(-w*0.12 + (i%3)*20, -h*0.1 + Math.floor(i/3)*24, 6, 0, Math.PI*2);
+      ctx.fill();
+    }
+  }
+  else if(pattern === 'sand'){
+    ctx.fillStyle = 'rgba(255,255,255,.18)';
+    for(let i=0;i<12;i++){
+      ctx.fillRect(-w*0.2 + i*10, -h*0.12 + (i%2)*10, 4, 4);
+    }
+  }
+  else if(pattern === 'wave'){
+    ctx.strokeStyle = 'rgba(255,255,255,.30)';
+    ctx.lineWidth = 2;
+    for(let i=0;i<2;i++){
+      ctx.beginPath();
+      for(let x=-w*0.18;x<=w*0.18;x+=10){
+        const y = Math.sin((x + i*20) * 0.15) * 5 + (i===0?-8:8);
+        if(x===-w*0.18) ctx.moveTo(x,y);
+        else ctx.lineTo(x,y);
+      }
+      ctx.stroke();
+    }
+  }
+  else if(pattern === 'moon'){
+    ctx.fillStyle = 'rgba(255,255,255,.22)';
+    ctx.beginPath();
+    ctx.arc(0, 0, h*0.12, 0, Math.PI*2);
+    ctx.fill();
+    ctx.fillStyle = 'rgba(0,0,0,.18)';
+    ctx.beginPath();
+    ctx.arc(h*0.05, -h*0.02, h*0.1, 0, Math.PI*2);
+    ctx.fill();
+  }
+  else if(pattern === 'star'){
+    ctx.fillStyle = 'rgba(255,255,255,.7)';
+    for(let i=0;i<5;i++){
+      const sx = -w*0.12 + i*18;
+      const sy = i%2===0 ? -h*0.08 : h*0.08;
+      ctx.fillRect(sx-1, sy-5, 2, 10);
+      ctx.fillRect(sx-5, sy-1, 10, 2);
+    }
+  }
+  else if(pattern === 'void'){
+    ctx.fillStyle = 'rgba(140,100,255,.22)';
+    ctx.beginPath();
+    ctx.arc(0, 0, h*0.18, 0, Math.PI*2);
+    ctx.fill();
+    ctx.fillStyle = 'rgba(0,0,0,.28)';
+    ctx.beginPath();
+    ctx.arc(0, 0, h*0.08, 0, Math.PI*2);
+    ctx.fill();
+  }
+  else if(pattern === 'cloud'){
+    ctx.fillStyle = 'rgba(255,255,255,.30)';
+    ctx.beginPath();
+    ctx.arc(-10, 2, 9, 0, Math.PI*2);
+    ctx.arc(0, -4, 10, 0, Math.PI*2);
+    ctx.arc(12, 2, 8, 0, Math.PI*2);
+    ctx.fill();
+  }
+  else if(pattern === 'galaxy'){
+    ctx.fillStyle = 'rgba(255,255,255,.65)';
+    for(let i=0;i<8;i++){
+      ctx.beginPath();
+      ctx.arc(-w*0.16 + i*12, Math.sin(i)*10, 2.5, 0, Math.PI*2);
+      ctx.fill();
+    }
+  }
+  else if(pattern === 'glowdot'){
+    ctx.fillStyle = 'rgba(255,255,180,.65)';
+    for(let i=0;i<5;i++){
+      ctx.beginPath();
+      ctx.arc(-w*0.12 + i*16, 0, 4, 0, Math.PI*2);
+      ctx.fill();
+    }
+  }
+  else if(pattern === 'gold'){
+    ctx.strokeStyle = 'rgba(255,255,255,.35)';
+    ctx.lineWidth = 3;
+    for(let i=-1;i<=2;i++){
+      ctx.beginPath();
+      ctx.moveTo(-w*0.14 + i*18, -h*0.2);
+      ctx.lineTo(-w*0.04 + i*18, h*0.2);
+      ctx.stroke();
+    }
+  }
+}
 class Fish{
   constructor(){
     const map=currentMap();
     const rareBoost = map.rare + game.upgrades.luck*4 + (game.baitActive?20:0) + (game.potions.luck>0?24:0);
-    const fishPool = fishTypesByMap[map.id] || fishTypesByMap.bay; let roll = rand(0,100), acc=0, chosen=fishPool[0];
-    for(const f of fishPool){
-      let ch = f.chance;
-      if(f.id>=4) ch += rareBoost*(f.id-3)/10;
-      acc += ch;
-      if(roll <= acc){ chosen=f; break; }
-    }
+    const fishPool = fishTypesByMap[map.id] || fishTypesByMap.bay;
+let roll = rand(0,100), acc=0, chosen=fishPool[0];
+
+for(const f of fishPool){
+  let ch = f.chance;
+  if(f.id>=4) ch += rareBoost*(f.id-3)/10;
+  acc += ch;
+  if(roll <= acc){ chosen=f; break; }
+}
     const palette = (fishPalettes[map.id] || fishPalettes.bay)[chosen.id-1] || {};
     this.type={...chosen, name:palette.name || chosen.name, body:palette.body || chosen.body, fin:palette.fin || chosen.fin};
     this.variant=chooseVariant(chosen.id);
@@ -299,23 +612,89 @@ class Fish{
     this.bob=rand(0,Math.PI*2); this.caught=false;
   }
   move(dt){ if(this.caught) return; this.bob+=dt*.005; this.x += this.dir*this.speed*dt*.06; if(this.x>W+this.w+60||this.x<-this.w-60) Object.assign(this,new Fish()); }
-  draw(){ const f=this.type, bob=Math.sin(this.bob)*4, v=this.variant; ctx.save(); ctx.translate(this.x+this.w/2,this.y+this.h/2+bob); ctx.scale(this.dir,1);
-    ctx.shadowColor=v ? v.border : (f.id>=5?'rgba(255,255,255,.6)':'rgba(0,0,0,.25)'); ctx.shadowBlur=v ? 22 : (f.id>=5?16:8); ctx.shadowOffsetY=5;
-    ctx.fillStyle=f.fin; ctx.beginPath(); ctx.moveTo(-this.w*.47,0); ctx.lineTo(-this.w*.72,-this.h*.32); ctx.lineTo(-this.w*.72,this.h*.32); ctx.closePath(); ctx.fill();
-    const g=ctx.createLinearGradient(-this.w/2,-this.h/2,this.w/2,this.h/2); g.addColorStop(0,'white'); g.addColorStop(.2,f.body); g.addColorStop(1,f.fin); ctx.fillStyle=g;
-    ctx.beginPath(); ctx.ellipse(0,0,this.w*.45,this.h*.42,0,0,Math.PI*2); ctx.fill();
-    if(v){
-      ctx.lineWidth=v.id==='rainbow'?8:6;
-      ctx.strokeStyle=v.border;
-      ctx.stroke();
-      if(v.id==='rainbow'){ ctx.strokeStyle='#00f5ff'; ctx.lineWidth=3; ctx.stroke(); }
-    }
-    ctx.fillStyle=f.fin; ctx.beginPath(); ctx.moveTo(-this.w*.03,-this.h*.04); ctx.lineTo(-this.w*.2,-this.h*.52); ctx.lineTo(this.w*.18,-this.h*.12); ctx.closePath(); ctx.fill();
-    ctx.beginPath(); ctx.moveTo(-this.w*.02,this.h*.1); ctx.lineTo(-this.w*.18,this.h*.48); ctx.lineTo(this.w*.14,this.h*.16); ctx.closePath(); ctx.fill();
-    ctx.shadowBlur=0; ctx.fillStyle='white'; ctx.beginPath(); ctx.arc(this.w*.28,-this.h*.1,Math.max(5,this.h*.055),0,Math.PI*2); ctx.fill(); ctx.fillStyle='black'; ctx.beginPath(); ctx.arc(this.w*.3,-this.h*.1,Math.max(2.5,this.h*.027),0,Math.PI*2); ctx.fill();
-    if(f.id>=5 || v){ text(`${v? v.label+' ':''}${f.name}`,0,-this.h*.7,16,'center',v?v.border:'#fff'); }
-    ctx.restore(); }
-  rect(){ return {x:this.x,y:this.y,w:this.w,h:this.h}; }
+draw(){
+  const f = this.type, bob = Math.sin(this.bob) * 4;
+
+  ctx.save();
+  ctx.translate(this.x + this.w/2, this.y + this.h/2 + bob);
+  ctx.scale(this.dir, 1);
+
+  if(f.glow){
+    ctx.shadowColor = f.rainbow ? 'rgba(255,255,255,.85)' : f.fin;
+    ctx.shadowBlur = 18;
+    ctx.shadowOffsetY = 0;
+  }else{
+    ctx.shadowColor = f.id >= 4 ? 'rgba(255,255,255,.35)' : 'rgba(0,0,0,.25)';
+    ctx.shadowBlur = f.id >= 4 ? 12 : 7;
+    ctx.shadowOffsetY = 4;
+  }
+
+  drawTailShape(f.tail || 'triangle', this.w, this.h, f.fin);
+
+  ctx.fillStyle = fishGradient(f, this.w, this.h);
+  traceFishBody(f.shape || 'round', this.w, this.h);
+  ctx.fill();
+
+  ctx.save();
+  traceFishBody(f.shape || 'round', this.w, this.h);
+  ctx.clip();
+  drawFishPattern(f.pattern || 'none', this.w, this.h);
+  ctx.restore();
+
+  ctx.shadowBlur = 0;
+
+  ctx.fillStyle = f.fin;
+  ctx.beginPath();
+  ctx.moveTo(-this.w*0.02, -this.h*0.02);
+  ctx.lineTo(-this.w*0.18, -this.h*0.46);
+  ctx.lineTo(this.w*0.14, -this.h*0.12);
+  ctx.closePath();
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.moveTo(-this.w*0.02, this.h*0.1);
+  ctx.lineTo(-this.w*0.16, this.h*0.42);
+  ctx.lineTo(this.w*0.12, this.h*0.16);
+  ctx.closePath();
+  ctx.fill();
+
+  if(f.shape === 'shark' || f.shape === 'spiky'){
+    ctx.beginPath();
+    ctx.moveTo(-this.w*0.08, -this.h*0.12);
+    ctx.lineTo(0, -this.h*0.54);
+    ctx.lineTo(this.w*0.08, -this.h*0.14);
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  if(f.golden || f.rainbow){
+    ctx.strokeStyle = f.golden ? '#ffd32a' : '#ffffff';
+    ctx.lineWidth = 5;
+    traceFishBody(f.shape || 'round', this.w, this.h);
+    ctx.stroke();
+  }
+
+  if(f.rainbow){
+    ctx.strokeStyle = 'rgba(255,255,255,.45)';
+    ctx.lineWidth = 3;
+    drawTailShape(f.tail || 'triangle', this.w, this.h, 'rgba(0,0,0,0)');
+  }
+
+  ctx.fillStyle = 'white';
+  ctx.beginPath();
+  ctx.arc(this.w*0.28, -this.h*0.1, Math.max(5, this.h*0.055), 0, Math.PI*2);
+  ctx.fill();
+
+  ctx.fillStyle = 'black';
+  ctx.beginPath();
+  ctx.arc(this.w*0.3, -this.h*0.1, Math.max(2.5, this.h*0.027), 0, Math.PI*2);
+  ctx.fill();
+
+  if(f.id >= 4){
+    text(f.name, 0, -this.h*0.75, 16, 'center', '#fff');
+  }
+
+  ctx.restore();
 }
 
 
