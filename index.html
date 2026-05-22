@@ -868,15 +868,50 @@ function changeMap(id){
 }
 function updateTransition(dt){
   if(!game.transition.active) return;
-  const tr=game.transition; tr.t += dt;
-  if(tr.phase==='sailOut'){
-    tr.boatX = tr.t * 1.25;
-    if(tr.t>650){ tr.phase='black'; tr.t=0; tr.boatX=-W-260; }
-  } else if(tr.phase==='black'){
-    if(tr.t>420){ game.map=tr.nextMap; spawnFish(); save(); tr.phase='sailIn'; tr.t=0; }
-  } else if(tr.phase==='sailIn'){
-    tr.boatX = -W + tr.t * 1.45;
-    if(tr.boatX>=0){ game.transition={active:false, phase:'none', t:0, nextMap:null, boatX:0}; msg(`Arrived: ${currentMap().name}`,W/2,120,'#fff16a'); }
+
+  // convert ms to seconds
+  const delta = dt / 1000;
+
+  const tr = game.transition;
+  tr.t += delta;
+
+  if(tr.phase === 'sailOut'){
+
+    tr.boatX += 900 * delta;
+
+    if(tr.t > 1.2){
+      tr.phase = 'black';
+      tr.t = 0;
+      tr.boatX = -W - 260;
+    }
+
+  } else if(tr.phase === 'black'){
+
+    if(tr.t > 0.7){
+      game.map = tr.nextMap;
+      spawnFish();
+      save();
+
+      tr.phase = 'sailIn';
+      tr.t = 0;
+    }
+
+  } else if(tr.phase === 'sailIn'){
+
+    tr.boatX += 900 * delta;
+
+    if(tr.boatX >= 0){
+
+      game.transition = {
+        active:false,
+        phase:'none',
+        t:0,
+        nextMap:null,
+        boatX:0
+      };
+
+      msg(`Arrived: ${currentMap().name}`, W/2, 120, '#fff16a');
+    }
   }
 }
 function drawTransition(){
