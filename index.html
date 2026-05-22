@@ -914,13 +914,42 @@ function updateTransition(dt){
     }
   }
 }
+
 function drawTransition(){
   if(!game.transition.active) return;
-  const tr=game.transition;
-  let alpha = tr.phase==='black' ? .96 : Math.min(.75, tr.t/900);
-  if(tr.phase==='sailIn') alpha = Math.max(0, .75 - tr.t/900);
-  ctx.fillStyle=`rgba(0,0,0,${alpha})`; ctx.fillRect(0,0,W,H);
-  if(tr.phase==='black') text('Sailing to new waters...',W/2,H/2,42,'center','#ffffff');
+
+  const tr = game.transition;
+
+  let alpha = 0;
+
+  if(tr.phase === 'sailOut'){
+    alpha = Math.min(1, tr.t / 1.2);
+  }
+  else if(tr.phase === 'black'){
+    alpha = 1;
+  }
+  else if(tr.phase === 'sailIn'){
+    alpha = Math.max(0, 1 - (tr.t / 1.2));
+  }
+
+  ctx.save();
+
+  ctx.globalAlpha = alpha;
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0, 0, W, H);
+
+  ctx.restore();
+
+  if(tr.phase === 'black'){
+    text(
+      'Sailing to new waters...',
+      W/2,
+      H/2,
+      42,
+      'center',
+      '#ffffff'
+    );
+  }
 }
 
 function drawHUD(){ buttons=[];
