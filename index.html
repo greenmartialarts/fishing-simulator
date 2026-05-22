@@ -44,6 +44,10 @@
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 const W = 1510, H = 850;
+const fishImages = {
+  jayFish: new Image()
+};
+fishImages.jayFish.src = "jay_fish.png";
 
 const maps = [
   { id:'bay', name:'Starter Bay', cost:0, mult:1, depth:'#1e90ff', sky1:'#86e1ff', sky2:'#2196f3', fishBonus:0, rare:0, desc:'Balanced beginner waters.' },
@@ -193,7 +197,24 @@ const fishTypesByMap = {
     { id:5, name:'Rainbow Galaxy Fish', value:250000, body:'#ffffff', fin:'#a29bfe', chance:1, size:2.35, shape:'angel', pattern:'rainbow', tail:'fan', rainbow:true, glow:true }
   ]
 };
+const jayFishType = {
+  id: 1,
+  name: 'Jay Fish',
+  value: 2,
+  body: '#d6d6d6',
+  fin: '#333333',
+  chance: 70,
+  size: 1.25,
+  image: 'jayFish',
+  glow: false
+};
 
+for (const mapId in fishTypesByMap) {
+  fishTypesByMap[mapId].unshift({
+    ...jayFishType,
+    value: Math.max(2, Math.round(fishTypesByMap[mapId][0].value * 0.9))
+  });
+}
 function chooseVariant(typeId){
   let goldenChance = 3 + game.upgrades.luck * .7 + (game.baitActive ? 4 : 0) + (game.potions.luck>0 ? 5 : 0);
   let rainbowChance = .8 + game.upgrades.luck * .25 + (game.baitActive ? 1.5 : 0) + (game.potions.luck>0 ? 2 : 0);
@@ -616,6 +637,30 @@ class Fish{
 draw(){
   const f = this.type, bob = Math.sin(this.bob) * 4;
 
+  // Image-based fish, like Jay Fish
+  if (f.image && fishImages[f.image]) {
+    const img = fishImages[f.image];
+
+    ctx.save();
+    ctx.translate(this.x + this.w / 2, this.y + this.h / 2 + bob);
+    ctx.scale(this.dir, 1);
+
+    ctx.shadowColor = f.glow ? 'rgba(255,255,255,.8)' : 'rgba(0,0,0,.35)';
+    ctx.shadowBlur = f.glow ? 18 : 10;
+    ctx.shadowOffsetY = 4;
+
+    ctx.drawImage(img, -this.w / 2, -this.h / 2, this.w, this.h);
+
+    ctx.shadowBlur = 0;
+    ctx.shadowOffsetY = 0;
+
+    // Name tag
+    text(f.name, 0, -this.h * 0.7, 16, 'center', '#fff');
+
+    ctx.restore();
+    return;
+  }
+
   ctx.save();
   ctx.translate(this.x + this.w/2, this.y + this.h/2 + bob);
   ctx.scale(this.dir, 1);
@@ -691,14 +736,10 @@ draw(){
   ctx.arc(this.w*0.3, -this.h*0.1, Math.max(2.5, this.h*0.027), 0, Math.PI*2);
   ctx.fill();
 
-  // --- Draw Name Tag ---
+  // Draw name tag for rare normal fish
   if(f.id >= 4){
     ctx.save();
-    // Counter-act the parent horizontal flip if the fish is swimming left
     ctx.scale(this.dir, 1); 
-    
-    // If the fish is flipped (-1), the positive X offset must be inverted 
-    // so the text stays centered right over the middle of the fish.
     text(f.name, 0, -this.h * 0.75, 16, 'center', '#fff');
     ctx.restore();
   }
