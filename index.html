@@ -47,153 +47,152 @@ const W = 1510, H = 850;
 
 const maps = [
   { id:'bay', name:'Starter Bay', cost:0, mult:1, depth:'#1e90ff', sky1:'#86e1ff', sky2:'#2196f3', fishBonus:0, rare:0, desc:'Balanced beginner waters.' },
-  { id:'reef', name:'Coral Reef', cost:500, mult:1.1, depth:'#00a8a8', sky1:'#8ff8ff', sky2:'#03a9a9', fishBonus:4, rare:6, desc:'More fish, better coin rewards.' },
-  { id:'deep', name:'Deep Sea', cost:1800, mult:1.2, depth:'#071a4a', sky1:'#23406d', sky2:'#081027', fishBonus:7, rare:13, desc:'Dark water with expensive catches.' },
-  { id:'lava', name:'Volcano Coast', cost:5500, mult:1.4, depth:'#b83220', sky1:'#ff9955', sky2:'#33100b', fishBonus:9, rare:22, desc:'Dangerous water, huge profit.' },
-  { id:'ice', name:'Frozen Abyss', cost:14000, mult:1.6, depth:'#7ee8ff', sky1:'#e8fbff', sky2:'#0d4064', fishBonus:12, rare:34, desc:'Endgame map with elite fish.' },
+  { id:'reef', name:'Coral Reef', cost:150, mult:1.1, depth:'#00a8a8', sky1:'#8ff8ff', sky2:'#03a9a9', fishBonus:4, rare:6, desc:'More fish, better coin rewards.' },
+  { id:'deep', name:'Deep Sea', cost:400, mult:1.2, depth:'#071a4a', sky1:'#23406d', sky2:'#081027', fishBonus:7, rare:13, desc:'Dark water with expensive catches.' },
+  { id:'lava', name:'Volcano Coast', cost:1000, mult:1.3, depth:'#b83220', sky1:'#ff9955', sky2:'#33100b', fishBonus:9, rare:22, desc:'Dangerous water, huge profit.' },
+  { id:'ice', name:'Frozen Abyss', cost:2200, mult:1.4, depth:'#7ee8ff', sky1:'#e8fbff', sky2:'#0d4064', fishBonus:12, rare:34, desc:'Endgame map with elite fish.' },
 
-  { id:'mangrove', name:'Mangrove Swamp', cost:32000, mult:2, depth:'#1f6b4a', sky1:'#9be7a1', sky2:'#154734', fishBonus:14, rare:42, desc:'Thick swamp waters with strange fish.' },
-  { id:'crystal', name:'Crystal Lagoon', cost:70000, mult:2.5, depth:'#5df2ff', sky1:'#d7ffff', sky2:'#26b6c9', fishBonus:16, rare:52, desc:'Bright crystal water with shiny catches.' },
-  { id:'storm', name:'Stormy Ocean', cost:150000, mult:3, depth:'#1d263b', sky1:'#5f6c86', sky2:'#101827', fishBonus:18, rare:63, desc:'Rough waves and powerful fish.' },
-  { id:'jungle', name:'Jungle River', cost:320000, mult:4, depth:'#0b8f5a', sky1:'#88ff88', sky2:'#0d5c36', fishBonus:20, rare:75, desc:'Fast river full of rare jungle fish.' },
-  { id:'toxic', name:'Toxic Marsh', cost:750000, mult:5, depth:'#7cff00', sky1:'#d4ff75', sky2:'#234d00', fishBonus:22, rare:88, desc:'Glowing waters with dangerous rewards.' },
+  { id:'mangrove', name:'Mangrove Swamp', cost:4500, mult:1.5, depth:'#1f6b4a', sky1:'#9be7a1', sky2:'#154734', fishBonus:14, rare:42, desc:'Thick swamp waters with strange fish.' },
+  { id:'crystal', name:'Crystal Lagoon', cost:9000, mult:1.6, depth:'#5df2ff', sky1:'#d7ffff', sky2:'#26b6c9', fishBonus:16, rare:52, desc:'Bright crystal water with shiny catches.' },
+  { id:'storm', name:'Stormy Ocean', cost:18000, mult:1.7, depth:'#1d263b', sky1:'#5f6c86', sky2:'#101827', fishBonus:18, rare:63, desc:'Rough waves and powerful fish.' },
+  { id:'jungle', name:'Jungle River', cost:35000, mult:1.8, depth:'#0b8f5a', sky1:'#88ff88', sky2:'#0d5c36', fishBonus:20, rare:75, desc:'Fast river full of rare jungle fish.' },
+  { id:'toxic', name:'Toxic Marsh', cost:65000, mult:1.9, depth:'#7cff00', sky1:'#d4ff75', sky2:'#234d00', fishBonus:22, rare:88, desc:'Glowing waters with dangerous rewards.' },
 
-  { id:'desert', name:'Desert Oasis', cost:1600000, mult:7.5, depth:'#1ecbe1', sky1:'#ffe29a', sky2:'#d88b35', fishBonus:24, rare:102, desc:'Hidden oasis with valuable fish.' },
-  { id:'moon', name:'Moonlit Tide', cost:3500000, mult:10, depth:'#151a40', sky1:'#8d9bff', sky2:'#06091f', fishBonus:26, rare:120, desc:'Night water with glowing moon fish.' },
-  { id:'void', name:'Void Sea', cost:8000000, mult:15, depth:'#090014', sky1:'#3b0a69', sky2:'#050008', fishBonus:28, rare:145, desc:'Dark reality-bending waters.' },
-  { id:'heaven', name:'Skyfall Waters', cost:18000000, mult:20, depth:'#8ee7ff', sky1:'#ffffff', sky2:'#76b6ff', fishBonus:30, rare:170, desc:'Floating ocean above the clouds.' },
-  { id:'galaxy', name:'Galaxy Ocean', cost:40000000, mult:25, depth:'#12003b', sky1:'#bb8cff', sky2:'#020010', fishBonus:34, rare:210, desc:'Final cosmic map with insane rewards.' }
+  { id:'desert', name:'Desert Oasis', cost:120000, mult:2, depth:'#1ecbe1', sky1:'#ffe29a', sky2:'#d88b35', fishBonus:24, rare:102, desc:'Hidden oasis with valuable fish.' },
+  { id:'moon', name:'Moonlit Tide', cost:220000, mult:2.1, depth:'#151a40', sky1:'#8d9bff', sky2:'#06091f', fishBonus:26, rare:120, desc:'Night water with glowing moon fish.' },
+  { id:'void', name:'Void Sea', cost:400000, mult:2.2, depth:'#090014', sky1:'#3b0a69', sky2:'#050008', fishBonus:28, rare:145, desc:'Dark reality-bending waters.' },
+  { id:'heaven', name:'Skyfall Waters', cost:650000, mult:2.3, depth:'#8ee7ff', sky1:'#ffffff', sky2:'#76b6ff', fishBonus:30, rare:170, desc:'Floating ocean above the clouds.' },
+  { id:'galaxy', name:'Galaxy Ocean', cost:1000000, mult:2.5, depth:'#12003b', sky1:'#bb8cff', sky2:'#020010', fishBonus:34, rare:210, desc:'Final cosmic map with insane rewards.' }
 ];
 
 const rods = [
   { id:'wood', name:'Wood Rod', cost:0, power:1, desc:'Normal speed.' },
-  { id:'steel', name:'Steel Rod', cost:7500, power:1.25, desc:'+25% harpoon speed.' },
-  { id:'gold', name:'Gold Rod', cost:32000, power:1.55, desc:'+55% harpoon speed.' },
-  { id:'mythic', name:'Mythic Rod', cost:120000, power:2.05, desc:'Very fast harpoon.' }
+  { id:'steel', name:'Steel Rod', cost:1200, power:1.25, desc:'+25% harpoon speed.' },
+  { id:'gold', name:'Gold Rod', cost:25000, power:1.55, desc:'+55% harpoon speed.' },
+  { id:'mythic', name:'Mythic Rod', cost:300000, power:2.05, desc:'Very fast harpoon.' }
 ];
 
 const fishTypesByMap = {
   bay: [
-    { id:1, name:'Orange Minnow', value:5, body:'#ff9f43', fin:'#ff6b35', chance:58, size:1, shape:'round', pattern:'none', tail:'fork' },
-    { id:2, name:'Blue Sardine', value:12, body:'#48dbfb', fin:'#0abde3', chance:28, size:1, shape:'long', pattern:'stripe', tail:'fork' },
-    { id:3, name:'Purple Bass', value:30, body:'#a55eea', fin:'#8854d0', chance:11, size:1.1, shape:'tall', pattern:'spot', tail:'triangle' },
-    { id:4, name:'Golden Bay Fish', value:120, body:'#feca57', fin:'#ff9f43', chance:2.5, size:1.35, shape:'tall', pattern:'gold', tail:'fork', golden:true },
-    { id:5, name:'Rainbow Minnow', value:500, body:'#ffffff', fin:'#70a1ff', chance:0.5, size:1.45, shape:'round', pattern:'rainbow', tail:'fork', rainbow:true, glow:true }
+    { id:1, name:'Orange Minnow', value:2, body:'#ff9f43', fin:'#ff6b35', chance:58, size:1, shape:'round', pattern:'none', tail:'fork' },
+    { id:2, name:'Blue Sardine', value:5, body:'#48dbfb', fin:'#0abde3', chance:28, size:1, shape:'long', pattern:'stripe', tail:'fork' },
+    { id:3, name:'Purple Bass', value:12, body:'#a55eea', fin:'#8854d0', chance:11, size:1.1, shape:'tall', pattern:'spot', tail:'triangle' },
+    { id:4, name:'Golden Bay Fish', value:45, body:'#feca57', fin:'#ff9f43', chance:2.5, size:1.35, shape:'tall', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Minnow', value:150, body:'#ffffff', fin:'#70a1ff', chance:0.5, size:1.45, shape:'round', pattern:'rainbow', tail:'fork', rainbow:true, glow:true }
   ],
 
   reef: [
-    { id:1, name:'Coral Clownfish', value:20, body:'#ff7675', fin:'#fd79a8', chance:56, size:1, shape:'round', pattern:'stripe', tail:'fan' },
-    { id:2, name:'Reef Tang', value:45, body:'#00cec9', fin:'#0984e3', chance:29, size:1.05, shape:'tall', pattern:'dot', tail:'fork' },
-    { id:3, name:'Pink Angelfish', value:95, body:'#fd79a8', fin:'#e84393', chance:12, size:1.15, shape:'tall', pattern:'finstripe', tail:'fan' },
-    { id:4, name:'Golden Coral Fish', value:350, body:'#ffeaa7', fin:'#fdcb6e', chance:2.5, size:1.4, shape:'tall', pattern:'gold', tail:'fork', golden:true },
-    { id:5, name:'Rainbow Reef Fish', value:1400, body:'#ffffff', fin:'#a29bfe', chance:0.5, size:1.55, shape:'round', pattern:'rainbow', tail:'fan', rainbow:true, glow:true }
+    { id:1, name:'Coral Clownfish', value:6, body:'#ff7675', fin:'#fd79a8', chance:56, size:1, shape:'round', pattern:'stripe', tail:'fan' },
+    { id:2, name:'Reef Tang', value:14, body:'#00cec9', fin:'#0984e3', chance:29, size:1.05, shape:'tall', pattern:'dot', tail:'fork' },
+    { id:3, name:'Pink Angelfish', value:32, body:'#fd79a8', fin:'#e84393', chance:12, size:1.15, shape:'tall', pattern:'finstripe', tail:'fan' },
+    { id:4, name:'Golden Coral Fish', value:110, body:'#ffeaa7', fin:'#fdcb6e', chance:2.5, size:1.4, shape:'tall', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Reef Fish', value:350, body:'#ffffff', fin:'#a29bfe', chance:0.5, size:1.55, shape:'round', pattern:'rainbow', tail:'fan', rainbow:true, glow:true }
   ],
 
   deep: [
-    { id:1, name:'Deep Lanternfish', value:70, body:'#2d3436', fin:'#74b9ff', chance:55, size:1, shape:'long', pattern:'glowdot', tail:'fork', glow:true },
-    { id:2, name:'Abyss Eel', value:160, body:'#636e72', fin:'#0984e3', chance:29, size:1.2, shape:'eel', pattern:'line', tail:'spike' },
-    { id:3, name:'Shadow Tuna', value:340, body:'#130f40', fin:'#5352ed', chance:13, size:1.35, shape:'long', pattern:'shadow', tail:'fork' },
-    { id:4, name:'Golden Abyss Fish', value:1200, body:'#f9ca24', fin:'#f0932b', chance:2.5, size:1.55, shape:'shark', pattern:'gold', tail:'fork', golden:true },
-    { id:5, name:'Rainbow Deep Fish', value:4800, body:'#ffffff', fin:'#686de0', chance:0.5, size:1.7, shape:'eel', pattern:'rainbow', tail:'spike', rainbow:true, glow:true }
+    { id:1, name:'Deep Lanternfish', value:15, body:'#2d3436', fin:'#74b9ff', chance:55, size:1, shape:'long', pattern:'glowdot', tail:'fork', glow:true },
+    { id:2, name:'Abyss Eel', value:35, body:'#636e72', fin:'#0984e3', chance:29, size:1.2, shape:'eel', pattern:'line', tail:'spike' },
+    { id:3, name:'Shadow Tuna', value:80, body:'#130f40', fin:'#5352ed', chance:13, size:1.35, shape:'long', pattern:'shadow', tail:'fork' },
+    { id:4, name:'Golden Abyss Fish', value:260, body:'#f9ca24', fin:'#f0932b', chance:2.5, size:1.55, shape:'shark', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Deep Fish', value:800, body:'#ffffff', fin:'#686de0', chance:0.5, size:1.7, shape:'eel', pattern:'rainbow', tail:'spike', rainbow:true, glow:true }
   ],
 
   lava: [
-    { id:1, name:'Ember Fish', value:180, body:'#ff6b35', fin:'#ee5253', chance:54, size:1, shape:'round', pattern:'lava', tail:'triangle' },
-    { id:2, name:'Magma Snapper', value:420, body:'#ff4757', fin:'#c0392b', chance:29, size:1.15, shape:'tall', pattern:'crack', tail:'triangle' },
-    { id:3, name:'Volcano Pike', value:900, body:'#b33939', fin:'#ff9f43', chance:14, size:1.35, shape:'spiky', pattern:'lava', tail:'spike' },
-    { id:4, name:'Golden Flame Fish', value:3200, body:'#feca57', fin:'#ff9f43', chance:2.5, size:1.6, shape:'spiky', pattern:'gold', tail:'spike', golden:true },
-    { id:5, name:'Rainbow Lava Fish', value:13000, body:'#ffffff', fin:'#ff6b81', chance:0.5, size:1.8, shape:'spiky', pattern:'rainbow', tail:'spike', rainbow:true, glow:true }
+    { id:1, name:'Ember Fish', value:35, body:'#ff6b35', fin:'#ee5253', chance:54, size:1, shape:'round', pattern:'lava', tail:'triangle' },
+    { id:2, name:'Magma Snapper', value:85, body:'#ff4757', fin:'#c0392b', chance:29, size:1.15, shape:'tall', pattern:'crack', tail:'triangle' },
+    { id:3, name:'Volcano Pike', value:190, body:'#b33939', fin:'#ff9f43', chance:14, size:1.35, shape:'spiky', pattern:'lava', tail:'spike' },
+    { id:4, name:'Golden Flame Fish', value:600, body:'#feca57', fin:'#ff9f43', chance:2.5, size:1.6, shape:'spiky', pattern:'gold', tail:'spike', golden:true },
+    { id:5, name:'Rainbow Lava Fish', value:1800, body:'#ffffff', fin:'#ff6b81', chance:0.5, size:1.8, shape:'spiky', pattern:'rainbow', tail:'spike', rainbow:true, glow:true }
   ],
 
   ice: [
-    { id:1, name:'Frost Minnow', value:420, body:'#dff9fb', fin:'#7ed6df', chance:54, size:1, shape:'round', pattern:'ice', tail:'fork' },
-    { id:2, name:'Ice Trout', value:950, body:'#c7ecee', fin:'#22a6b3', chance:29, size:1.15, shape:'long', pattern:'ice', tail:'fork' },
-    { id:3, name:'Frozen Shark', value:2100, body:'#95afc0', fin:'#535c68', chance:14, size:1.55, shape:'shark', pattern:'ice', tail:'fork' },
-    { id:4, name:'Golden Ice Fish', value:7600, body:'#f6e58d', fin:'#f9ca24', chance:2.5, size:1.65, shape:'tall', pattern:'gold', tail:'fork', golden:true },
-    { id:5, name:'Rainbow Frost Fish', value:30000, body:'#ffffff', fin:'#badc58', chance:0.5, size:1.9, shape:'long', pattern:'rainbow', tail:'fork', rainbow:true, glow:true }
+    { id:1, name:'Frost Minnow', value:75, body:'#dff9fb', fin:'#7ed6df', chance:54, size:1, shape:'round', pattern:'ice', tail:'fork' },
+    { id:2, name:'Ice Trout', value:170, body:'#c7ecee', fin:'#22a6b3', chance:29, size:1.15, shape:'long', pattern:'ice', tail:'fork' },
+    { id:3, name:'Frozen Shark', value:380, body:'#95afc0', fin:'#535c68', chance:14, size:1.55, shape:'shark', pattern:'ice', tail:'fork' },
+    { id:4, name:'Golden Ice Fish', value:1200, body:'#f6e58d', fin:'#f9ca24', chance:2.5, size:1.65, shape:'tall', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Frost Fish', value:3500, body:'#ffffff', fin:'#badc58', chance:0.5, size:1.9, shape:'long', pattern:'rainbow', tail:'fork', rainbow:true, glow:true }
   ],
 
   mangrove: [
-    { id:1, name:'Swamp Guppy', value:950, body:'#55efc4', fin:'#00b894', chance:53, size:1, shape:'round', pattern:'leaf', tail:'fan' },
-    { id:2, name:'Mud Catfish', value:2200, body:'#6ab04c', fin:'#badc58', chance:30, size:1.2, shape:'eel', pattern:'mud', tail:'round' },
-    { id:3, name:'Vine Bass', value:4800, body:'#218c74', fin:'#33d9b2', chance:14, size:1.35, shape:'tall', pattern:'leaf', tail:'fan' },
-    { id:4, name:'Golden Swamp Fish', value:17000, body:'#f9ca24', fin:'#f0932b', chance:2.5, size:1.65, shape:'tall', pattern:'gold', tail:'fork', golden:true },
-    { id:5, name:'Rainbow Mangrove Fish', value:70000, body:'#ffffff', fin:'#00cec9', chance:0.5, size:1.9, shape:'eel', pattern:'rainbow', tail:'round', rainbow:true, glow:true }
+    { id:1, name:'Swamp Guppy', value:150, body:'#55efc4', fin:'#00b894', chance:53, size:1, shape:'round', pattern:'leaf', tail:'fan' },
+    { id:2, name:'Mud Catfish', value:340, body:'#6ab04c', fin:'#badc58', chance:30, size:1.2, shape:'eel', pattern:'mud', tail:'round' },
+    { id:3, name:'Vine Bass', value:750, body:'#218c74', fin:'#33d9b2', chance:14, size:1.35, shape:'tall', pattern:'leaf', tail:'fan' },
+    { id:4, name:'Golden Swamp Fish', value:2400, body:'#f9ca24', fin:'#f0932b', chance:2.5, size:1.65, shape:'tall', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Mangrove Fish', value:7000, body:'#ffffff', fin:'#00cec9', chance:0.5, size:1.9, shape:'eel', pattern:'rainbow', tail:'round', rainbow:true, glow:true }
   ],
 
-    crystal: [
-    { id:1, name:'Crystal Minnow', value:5200, body:'#81ecec', fin:'#00cec9', chance:52, size:1, shape:'round', pattern:'crystal', tail:'fork' },
-    { id:2, name:'Glassfin', value:11500, body:'#dff9fb', fin:'#7ed6df', chance:30, size:1.15, shape:'tall', pattern:'crystal', tail:'fan' },
-    { id:3, name:'Diamond Bass', value:28000, body:'#74b9ff', fin:'#0984e3', chance:13, size:1.4, shape:'spiky', pattern:'crystal', tail:'fork' },
-    { id:4, name:'Golden Crystal Fish', value:140000, body:'#ffeaa7', fin:'#fdcb6e', chance:4, size:1.7, shape:'spiky', pattern:'gold', tail:'fork', golden:true },
-    { id:5, name:'Rainbow Crystal Fish', value:750000, body:'#ffffff', fin:'#a29bfe', chance:1, size:1.95, shape:'spiky', pattern:'rainbow', tail:'fork', rainbow:true, glow:true }
+  crystal: [
+    { id:1, name:'Crystal Minnow', value:300, body:'#81ecec', fin:'#00cec9', chance:52, size:1, shape:'round', pattern:'crystal', tail:'fork' },
+    { id:2, name:'Glassfin', value:650, body:'#dff9fb', fin:'#7ed6df', chance:30, size:1.15, shape:'tall', pattern:'crystal', tail:'fan' },
+    { id:3, name:'Diamond Bass', value:1450, body:'#74b9ff', fin:'#0984e3', chance:13, size:1.4, shape:'spiky', pattern:'crystal', tail:'fork' },
+    { id:4, name:'Golden Crystal Fish', value:4600, body:'#ffeaa7', fin:'#fdcb6e', chance:4, size:1.7, shape:'spiky', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Crystal Fish', value:13000, body:'#ffffff', fin:'#a29bfe', chance:1, size:1.95, shape:'spiky', pattern:'rainbow', tail:'fork', rainbow:true, glow:true }
   ],
 
   storm: [
-    { id:1, name:'Storm Minnow', value:12000, body:'#636e72', fin:'#74b9ff', chance:52, size:1, shape:'long', pattern:'bolt', tail:'fork' },
-    { id:2, name:'Thunder Eel', value:26000, body:'#2d3436', fin:'#ffeaa7', chance:30, size:1.25, shape:'eel', pattern:'bolt', tail:'spike' },
-    { id:3, name:'Lightning Marlin', value:64000, body:'#5352ed', fin:'#f9ca24', chance:13, size:1.55, shape:'shark', pattern:'bolt', tail:'fork' },
-    { id:4, name:'Golden Storm Fish', value:320000, body:'#feca57', fin:'#ff9f43', chance:4, size:1.75, shape:'shark', pattern:'gold', tail:'fork', golden:true },
-    { id:5, name:'Rainbow Storm Fish', value:1700000, body:'#ffffff', fin:'#686de0', chance:1, size:2, shape:'eel', pattern:'rainbow', tail:'spike', rainbow:true, glow:true }
+    { id:1, name:'Storm Minnow', value:580, body:'#636e72', fin:'#74b9ff', chance:52, size:1, shape:'long', pattern:'bolt', tail:'fork' },
+    { id:2, name:'Thunder Eel', value:1250, body:'#2d3436', fin:'#ffeaa7', chance:30, size:1.25, shape:'eel', pattern:'bolt', tail:'spike' },
+    { id:3, name:'Lightning Marlin', value:2800, body:'#5352ed', fin:'#f9ca24', chance:13, size:1.55, shape:'shark', pattern:'bolt', tail:'fork' },
+    { id:4, name:'Golden Storm Fish', value:8800, body:'#feca57', fin:'#ff9f43', chance:4, size:1.75, shape:'shark', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Storm Fish', value:25000, body:'#ffffff', fin:'#686de0', chance:1, size:2, shape:'eel', pattern:'rainbow', tail:'spike', rainbow:true, glow:true }
   ],
 
   jungle: [
-    { id:1, name:'Jungle Guppy', value:26000, body:'#badc58', fin:'#6ab04c', chance:52, size:1, shape:'round', pattern:'leaf', tail:'fan' },
-    { id:2, name:'Leaf Snapper', value:58000, body:'#55efc4', fin:'#00b894', chance:30, size:1.2, shape:'tall', pattern:'leaf', tail:'fan' },
-    { id:3, name:'Tiger Bass', value:140000, body:'#f0932b', fin:'#eb4d4b', chance:13, size:1.45, shape:'long', pattern:'tiger', tail:'fork' },
-    { id:4, name:'Golden Jungle Fish', value:720000, body:'#f9ca24', fin:'#f0932b', chance:4, size:1.75, shape:'tall', pattern:'gold', tail:'fork', golden:true },
-    { id:5, name:'Rainbow Jungle Fish', value:3800000, body:'#ffffff', fin:'#badc58', chance:1, size:2, shape:'long', pattern:'rainbow', tail:'fork', rainbow:true, glow:true }
+    { id:1, name:'Jungle Guppy', value:1100, body:'#badc58', fin:'#6ab04c', chance:52, size:1, shape:'round', pattern:'leaf', tail:'fan' },
+    { id:2, name:'Leaf Snapper', value:2400, body:'#55efc4', fin:'#00b894', chance:30, size:1.2, shape:'tall', pattern:'leaf', tail:'fan' },
+    { id:3, name:'Tiger Bass', value:5400, body:'#f0932b', fin:'#eb4d4b', chance:13, size:1.45, shape:'long', pattern:'tiger', tail:'fork' },
+    { id:4, name:'Golden Jungle Fish', value:16500, body:'#f9ca24', fin:'#f0932b', chance:4, size:1.75, shape:'tall', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Jungle Fish', value:46000, body:'#ffffff', fin:'#badc58', chance:1, size:2, shape:'long', pattern:'rainbow', tail:'fork', rainbow:true, glow:true }
   ],
 
   toxic: [
-    { id:1, name:'Toxic Minnow', value:58000, body:'#7cff00', fin:'#badc58', chance:51, size:1, shape:'round', pattern:'toxic', tail:'triangle', glow:true },
-    { id:2, name:'Acid Eel', value:130000, body:'#b8ff00', fin:'#44bd32', chance:31, size:1.25, shape:'eel', pattern:'toxic', tail:'round', glow:true },
-    { id:3, name:'Mutant Bass', value:310000, body:'#009432', fin:'#A3CB38', chance:13, size:1.55, shape:'spiky', pattern:'toxic', tail:'spike', glow:true },
-    { id:4, name:'Golden Toxic Fish', value:1600000, body:'#f9ca24', fin:'#f0932b', chance:4, size:1.8, shape:'spiky', pattern:'gold', tail:'spike', golden:true },
-    { id:5, name:'Rainbow Toxic Fish', value:8500000, body:'#ffffff', fin:'#7cff00', chance:1, size:2.05, shape:'eel', pattern:'rainbow', tail:'round', rainbow:true, glow:true }
+    { id:1, name:'Toxic Minnow', value:2000, body:'#7cff00', fin:'#badc58', chance:51, size:1, shape:'round', pattern:'toxic', tail:'triangle', glow:true },
+    { id:2, name:'Acid Eel', value:4400, body:'#b8ff00', fin:'#44bd32', chance:31, size:1.25, shape:'eel', pattern:'toxic', tail:'round', glow:true },
+    { id:3, name:'Mutant Bass', value:9800, body:'#009432', fin:'#A3CB38', chance:13, size:1.55, shape:'spiky', pattern:'toxic', tail:'spike', glow:true },
+    { id:4, name:'Golden Toxic Fish', value:30000, body:'#f9ca24', fin:'#f0932b', chance:4, size:1.8, shape:'spiky', pattern:'gold', tail:'spike', golden:true },
+    { id:5, name:'Rainbow Toxic Fish', value:85000, body:'#ffffff', fin:'#7cff00', chance:1, size:2.05, shape:'eel', pattern:'rainbow', tail:'round', rainbow:true, glow:true }
   ],
 
   desert: [
-    { id:1, name:'Oasis Minnow', value:130000, body:'#1ecbe1', fin:'#22a6b3', chance:51, size:1, shape:'round', pattern:'wave', tail:'fork' },
-    { id:2, name:'Sandscale Fish', value:290000, body:'#f6e58d', fin:'#e1b12c', chance:31, size:1.2, shape:'tall', pattern:'sand', tail:'fan' },
-    { id:3, name:'Mirage Ray', value:700000, body:'#ffbe76', fin:'#f0932b', chance:13, size:1.55, shape:'ray', pattern:'sand', tail:'whip' },
-    { id:4, name:'Golden Oasis Fish', value:3600000, body:'#feca57', fin:'#ff9f43', chance:4, size:1.85, shape:'ray', pattern:'gold', tail:'whip', golden:true },
-    { id:5, name:'Rainbow Oasis Fish', value:19000000, body:'#ffffff', fin:'#00cec9', chance:1, size:2.1, shape:'ray', pattern:'rainbow', tail:'whip', rainbow:true, glow:true }
+    { id:1, name:'Oasis Minnow', value:3600, body:'#1ecbe1', fin:'#22a6b3', chance:51, size:1, shape:'round', pattern:'wave', tail:'fork' },
+    { id:2, name:'Sandscale Fish', value:8000, body:'#f6e58d', fin:'#e1b12c', chance:31, size:1.2, shape:'tall', pattern:'sand', tail:'fan' },
+    { id:3, name:'Mirage Ray', value:18000, body:'#ffbe76', fin:'#f0932b', chance:13, size:1.55, shape:'ray', pattern:'sand', tail:'whip' },
+    { id:4, name:'Golden Oasis Fish', value:54000, body:'#feca57', fin:'#ff9f43', chance:4, size:1.85, shape:'ray', pattern:'gold', tail:'whip', golden:true },
+    { id:5, name:'Rainbow Oasis Fish', value:140000, body:'#ffffff', fin:'#00cec9', chance:1, size:2.1, shape:'ray', pattern:'rainbow', tail:'whip', rainbow:true, glow:true }
   ],
 
   moon: [
-    { id:1, name:'Moon Minnow', value:280000, body:'#dcdde1', fin:'#7f8fa6', chance:51, size:1, shape:'round', pattern:'moon', tail:'fork' },
-    { id:2, name:'Lunar Eel', value:620000, body:'#9c88ff', fin:'#8c7ae6', chance:31, size:1.25, shape:'eel', pattern:'moon', tail:'spike', glow:true },
-    { id:3, name:'Star Bass', value:1500000, body:'#273c75', fin:'#fbc531', chance:13, size:1.55, shape:'tall', pattern:'star', tail:'fan' },
-    { id:4, name:'Golden Moon Fish', value:7600000, body:'#f9ca24', fin:'#f0932b', chance:4, size:1.85, shape:'tall', pattern:'gold', tail:'fan', golden:true },
-    { id:5, name:'Rainbow Moon Fish', value:40000000, body:'#ffffff', fin:'#9c88ff', chance:1, size:2.15, shape:'eel', pattern:'rainbow', tail:'spike', rainbow:true, glow:true }
+    { id:1, name:'Moon Minnow', value:6400, body:'#dcdde1', fin:'#7f8fa6', chance:51, size:1, shape:'round', pattern:'moon', tail:'fork' },
+    { id:2, name:'Lunar Eel', value:14000, body:'#9c88ff', fin:'#8c7ae6', chance:31, size:1.25, shape:'eel', pattern:'moon', tail:'spike', glow:true },
+    { id:3, name:'Star Bass', value:31000, body:'#273c75', fin:'#fbc531', chance:13, size:1.55, shape:'tall', pattern:'star', tail:'fan' },
+    { id:4, name:'Golden Moon Fish', value:92000, body:'#f9ca24', fin:'#f0932b', chance:4, size:1.85, shape:'tall', pattern:'gold', tail:'fan', golden:true },
+    { id:5, name:'Rainbow Moon Fish', value:185000, body:'#ffffff', fin:'#9c88ff', chance:1, size:2.15, shape:'eel', pattern:'rainbow', tail:'spike', rainbow:true, glow:true }
   ],
 
   void: [
-    { id:1, name:'Void Minnow', value:620000, body:'#2c003e', fin:'#5f27cd', chance:50, size:1, shape:'long', pattern:'void', tail:'spike' },
-    { id:2, name:'Dark Matter Eel', value:1400000, body:'#130f40', fin:'#341f97', chance:31, size:1.3, shape:'eel', pattern:'void', tail:'spike', glow:true },
-    { id:3, name:'Blackhole Shark', value:3400000, body:'#000000', fin:'#6c5ce7', chance:14, size:1.7, shape:'shark', pattern:'star', tail:'fork' },
-    { id:4, name:'Golden Void Fish', value:17000000, body:'#feca57', fin:'#ff9f43', chance:4, size:1.9, shape:'shark', pattern:'gold', tail:'fork', golden:true },
-    { id:5, name:'Rainbow Void Fish', value:95000000, body:'#ffffff', fin:'#5f27cd', chance:1, size:2.2, shape:'eel', pattern:'rainbow', tail:'spike', rainbow:true, glow:true }
+    { id:1, name:'Void Minnow', value:11000, body:'#2c003e', fin:'#5f27cd', chance:50, size:1, shape:'long', pattern:'void', tail:'spike' },
+    { id:2, name:'Dark Matter Eel', value:24000, body:'#130f40', fin:'#341f97', chance:31, size:1.3, shape:'eel', pattern:'void', tail:'spike', glow:true },
+    { id:3, name:'Blackhole Shark', value:52000, body:'#000000', fin:'#6c5ce7', chance:14, size:1.7, shape:'shark', pattern:'star', tail:'fork' },
+    { id:4, name:'Golden Void Fish', value:145000, body:'#feca57', fin:'#ff9f43', chance:4, size:1.9, shape:'shark', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Void Fish', value:210000, body:'#ffffff', fin:'#5f27cd', chance:1, size:2.2, shape:'eel', pattern:'rainbow', tail:'spike', rainbow:true, glow:true }
   ],
 
   heaven: [
-    { id:1, name:'Cloud Minnow', value:1400000, body:'#ffffff', fin:'#74b9ff', chance:50, size:1, shape:'round', pattern:'cloud', tail:'fan' },
-    { id:2, name:'Angel Fish', value:3200000, body:'#dff9fb', fin:'#f6e58d', chance:31, size:1.25, shape:'tall', pattern:'cloud', tail:'fan', glow:true },
-    { id:3, name:'Sky Whale', value:7800000, body:'#7ed6df', fin:'#22a6b3', chance:14, size:1.8, shape:'whale', pattern:'wave', tail:'whale' },
-    { id:4, name:'Golden Heaven Fish', value:39000000, body:'#ffeaa7', fin:'#fdcb6e', chance:4, size:2, shape:'whale', pattern:'gold', tail:'whale', golden:true },
-    { id:5, name:'Rainbow Heaven Fish', value:220000000, body:'#ffffff', fin:'#ff9ff3', chance:1, size:2.25, shape:'angel', pattern:'rainbow', tail:'fan', rainbow:true, glow:true }
+    { id:1, name:'Cloud Minnow', value:18000, body:'#ffffff', fin:'#74b9ff', chance:50, size:1, shape:'round', pattern:'cloud', tail:'fan' },
+    { id:2, name:'Angel Fish', value:38000, body:'#dff9fb', fin:'#f6e58d', chance:31, size:1.25, shape:'tall', pattern:'cloud', tail:'fan', glow:true },
+    { id:3, name:'Sky Whale', value:78000, body:'#7ed6df', fin:'#22a6b3', chance:14, size:1.8, shape:'whale', pattern:'wave', tail:'whale' },
+    { id:4, name:'Golden Heaven Fish', value:185000, body:'#ffeaa7', fin:'#fdcb6e', chance:4, size:2, shape:'whale', pattern:'gold', tail:'whale', golden:true },
+    { id:5, name:'Rainbow Heaven Fish', value:230000, body:'#ffffff', fin:'#ff9ff3', chance:1, size:2.25, shape:'angel', pattern:'rainbow', tail:'fan', rainbow:true, glow:true }
   ],
 
   galaxy: [
-    { id:1, name:'Galaxy Minnow', value:3200000, body:'#6c5ce7', fin:'#a29bfe', chance:50, size:1, shape:'round', pattern:'star', tail:'fork', glow:true },
-    { id:2, name:'Nebula Eel', value:7200000, body:'#e84393', fin:'#fd79a8', chance:31, size:1.3, shape:'eel', pattern:'galaxy', tail:'spike', glow:true },
-    { id:3, name:'Cosmic Shark', value:18000000, body:'#0984e3', fin:'#00cec9', chance:14, size:1.8, shape:'shark', pattern:'star', tail:'fork', glow:true },
-    { id:4, name:'Golden Galaxy Fish', value:90000000, body:'#feca57', fin:'#ff9f43', chance:4, size:2, shape:'shark', pattern:'gold', tail:'fork', golden:true },
-    { id:5, name:'Rainbow Galaxy Fish', value:500000000, body:'#ffffff', fin:'#a29bfe', chance:1, size:2.35, shape:'angel', pattern:'rainbow', tail:'fan', rainbow:true, glow:true }
+    { id:1, name:'Galaxy Minnow', value:25000, body:'#6c5ce7', fin:'#a29bfe', chance:50, size:1, shape:'round', pattern:'star', tail:'fork', glow:true },
+    { id:2, name:'Nebula Eel', value:52000, body:'#e84393', fin:'#fd79a8', chance:31, size:1.3, shape:'eel', pattern:'galaxy', tail:'spike', glow:true },
+    { id:3, name:'Cosmic Shark', value:105000, body:'#0984e3', fin:'#00cec9', chance:14, size:1.8, shape:'shark', pattern:'star', tail:'fork', glow:true },
+    { id:4, name:'Golden Galaxy Fish', value:190000, body:'#feca57', fin:'#ff9f43', chance:4, size:2, shape:'shark', pattern:'gold', tail:'fork', golden:true },
+    { id:5, name:'Rainbow Galaxy Fish', value:250000, body:'#ffffff', fin:'#a29bfe', chance:1, size:2.35, shape:'angel', pattern:'rainbow', tail:'fan', rainbow:true, glow:true }
   ]
 };
-
 
 function chooseVariant(typeId){
   let goldenChance = 3 + game.upgrades.luck * .7 + (game.baitActive ? 4 : 0) + (game.potions.luck>0 ? 5 : 0);
@@ -557,36 +556,46 @@ function drawFishPattern(pattern, w, h){
   }
 }
 class Fish{
-  constructor(){
-    const map=currentMap();
-    const rareBoost = map.rare + game.upgrades.luck*4 + (game.baitActive?20:0) + (game.potions.luck>0?24:0);
+  constructor() {
+    const map = currentMap();
+    const rareBoost = map.rare + game.upgrades.luck * .4 + (game.baitActive ? 20 : 0) + (game.potions.luck > 0 ? 24 : 0);
     const fishPool = fishTypesByMap[map.id] || fishTypesByMap.bay;
-let roll = rand(0,100), acc=0, chosen=fishPool[0];
 
-for(const f of fishPool){
-  let ch = f.chance;
-  if(f.id>=4) ch += rareBoost*(f.id-3)/10;
-  acc += ch;
-  if(roll <= acc){ chosen=f; break; }
-}
-    // Adjusted to look up directly within the fishTypesByMap layout structure
-    const currentPool = fishTypesByMap[map.id] || fishTypesByMap.bay;
-    const lookupType = currentPool.find(f => f.id === chosen.id) || chosen;
+    // 1. Calculate the real total accumulated chance first
+    let totalChance = 0;
+    for (const f of fishPool) {
+      let ch = f.chance;
+      if (f.id >= 4) ch += rareBoost * (f.id - 3) / 10;
+      totalChance += ch;
+    }
 
-    this.type = {
-      ...chosen,
-      name: lookupType.name || chosen.name,
-      body: lookupType.body || chosen.body,
-      fin: lookupType.fin || chosen.fin
-    };
+    // 2. Roll a random number between 0 and the dynamic total chance
+    let roll = rand(0, totalChance);
+    let acc = 0;
+    let chosen = fishPool[0];
 
-    this.variant=chooseVariant(chosen.id);
-    this.dir=Math.random()<.5?-1:1;
-    this.w=140*chosen.size; this.h=70*chosen.size;
-    this.x=this.dir===1 ? -this.w-rand(0,500) : W+rand(0,500);
-    this.y=rand(245,735);
-    this.speed=rand(2.2,4.8)+(chosen.id*.18)+(map.fishBonus*.05);
-    this.bob=rand(0,Math.PI*2); this.caught=false;
+    // 3. Run the selection match accurately
+    for (const f of fishPool) {
+      let ch = f.chance;
+      if (f.id >= 4) ch += rareBoost * (f.id - 3) / 10;
+      acc += ch;
+      if (roll <= acc) { 
+        chosen = f; 
+        break; 
+      }
+    }
+
+    // 4. Clean fallback allocation 
+    this.type = { ...chosen };
+    this.variant = chooseVariant(chosen.id);
+    this.dir = Math.random() < .5 ? -1 : 1;
+    this.w = 140 * chosen.size; 
+    this.h = 70 * chosen.size;
+    this.x = this.dir === 1 ? -this.w - rand(0, 500) : W + rand(0, 500);
+    this.y = rand(245, 735);
+    this.speed = rand(2.2, 4.8) + (chosen.id * .18) + (map.fishBonus * .05);
+    this.bob = rand(0, Math.PI * 2); 
+    this.caught = false;
   }
   move(dt){ if(this.caught) return; this.bob+=dt*.005; this.x += this.dir*this.speed*dt*.06; if(this.x>W+this.w+60||this.x<-this.w-60) Object.assign(this,new Fish()); }
 draw(){
