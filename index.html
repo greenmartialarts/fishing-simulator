@@ -561,11 +561,20 @@ class Fish{
     const rareBoost = map.rare + game.upgrades.luck * .4 + (game.baitActive ? 20 : 0) + (game.potions.luck > 0 ? 24 : 0);
     const fishPool = fishTypesByMap[map.id] || fishTypesByMap.bay;
 
-    // 1. Calculate the real total accumulated chance first
+    // 1. Calculate pool total with a dampened, subtle boost
     let totalChance = 0;
     for (const f of fishPool) {
       let ch = f.chance;
-      if (f.id >= 4) ch += rareBoost * (f.id - 3) / 10;
+      if (f.id >= 4) {
+        // Asymptotically dampens the rareBoost so it can NEVER exceed a modest cap.
+        // Formula: base_chance * (1 + (max_extra_multiplier * boost / (boost + scaling_factor)))
+        // This ensures even a rareBoost of 500 only gives a controlled, gentle lift.
+        const maxExtraMult = f.id === 4 ? 0.25 : 0.40; // Max +25% for Golden, +40% for Rainbow
+        const dampeningFactor = 50; // Higher = slower, subtler scaling
+        const subtleMultiplier = 1 + (maxExtraMult * rareBoost / (rareBoost + dampeningFactor));
+        
+        ch = ch * subtleMultiplier;
+      }
       totalChance += ch;
     }
 
@@ -577,7 +586,13 @@ class Fish{
     // 3. Run the selection match accurately
     for (const f of fishPool) {
       let ch = f.chance;
-      if (f.id >= 4) ch += rareBoost * (f.id - 3) / 10;
+      if (f.id >= 4) {
+        const maxExtraMult = f.id === 4 ? 0.25 : 0.40;
+        const dampeningFactor = 50;
+        const subtleMultiplier = 1 + (maxExtraMult * rareBoost / (rareBoost + dampeningFactor));
+        
+        ch = ch * subtleMultiplier;
+      }
       acc += ch;
       if (roll <= acc) { 
         chosen = f; 
@@ -676,10 +691,16 @@ draw(){
   ctx.arc(this.w*0.3, -this.h*0.1, Math.max(2.5, this.h*0.027), 0, Math.PI*2);
   ctx.fill();
 
-
-
+  // --- Draw Name Tag ---
   if(f.id >= 4){
-    text(f.name, 0, -this.h*0.75, 16, 'center', '#fff');
+    ctx.save();
+    // Counter-act the parent horizontal flip if the fish is swimming left
+    ctx.scale(this.dir, 1); 
+    
+    // If the fish is flipped (-1), the positive X offset must be inverted 
+    // so the text stays centered right over the middle of the fish.
+    text(f.name, 0, -this.h * 0.75, 16, 'center', '#fff');
+    ctx.restore();
   }
 
   ctx.restore();
