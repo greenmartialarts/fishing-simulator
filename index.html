@@ -988,17 +988,147 @@ function drawTransition(){
   ctx.restore();
 }
 
-function drawHUD(){ buttons=[];
-  roundRect(14,14,360,102,20,'rgba(0,0,0,.35)','rgba(255,255,255,.25)',2);
-  text(`Coins: ${Math.floor(game.coins)}`,34,42,30); text(`Gems: ${game.gems}`,34,78,24,'left','#9effff'); text(`Map: ${currentMap().name}`,190,78,20);
-  roundRect(395,14,430,102,20,'rgba(0,0,0,.30)','rgba(255,255,255,.22)',2); text(`Score: ${game.score}`,415,43,24); text(`Caught: ${game.caught}`,415,78,22); text(`Combo: ${game.combo.toFixed(2)}x`,570,78,22,'left','#fff16a');
-  const activePotions=Object.entries(game.potions).filter(([k,v])=>v>0).map(([k,v])=>`${k}:${Math.ceil(v/1000)}s`).join('  ');
-  if(activePotions) text(activePotions,735,43,16,'left','#ffdd59');
-  addButton(20,130,140,58,'Shop',()=>game.panel='shop','#0fbcf9').draw('#0fbcf9');
-  addButton(170,130,140,58,'Maps',()=>game.panel='maps','#00cec9').draw('#00cec9');
-  addButton(320,130,140,58,'Rods',()=>game.panel='rods','#fdcb6e').draw('#fdcb6e');
-  addButton(470,130,140,58,'Bait',()=>game.panel='bait','#a29bfe').draw('#a29bfe');
-  addButton(620,130,160,58,'Quests',()=>game.panel='quests','#55efc4').draw('#55efc4');
+function drawHUD(){
+
+  buttons = [];
+
+  // =====================================================
+  // LEFT MAIN STATS PANEL
+  // =====================================================
+
+  roundRect(
+    14, 14,
+    360, 135,
+    20,
+    'rgba(0,0,0,.38)',
+    'rgba(255,255,255,.22)',
+    2
+  );
+
+  // Title
+  text(currentMap().name, 34, 42, 28, 'left', '#9effff');
+
+  // Stats
+  text(`Coins: ${Math.floor(game.coins)}`, 34, 78, 24);
+  text(`Score: ${game.score}`, 34, 108, 22);
+  text(`Combo: ${game.combo.toFixed(1)}x`, 210, 108, 22, 'left', '#fff16a');
+
+  // Optional small caught stat
+  text(`Caught: ${game.caught}`, 210, 78, 20, 'left', '#dfe6e9');
+
+
+  // =====================================================
+  // RIGHT PANEL
+  // =====================================================
+
+  const rightX = W - 350;
+
+  roundRect(
+    rightX, 14,
+    330, 190,
+    20,
+    'rgba(0,0,0,.35)',
+    'rgba(255,255,255,.20)',
+    2
+  );
+
+
+  // =====================================================
+  // POTIONS SECTION
+  // =====================================================
+
+  text('Potions', rightX + 18, 38, 22, 'left', '#ffdd59');
+
+  const activePotions = Object.entries(game.potions)
+    .filter(([k,v]) => v > 0)
+    .map(([k,v]) => `${k}: ${Math.ceil(v/1000)}s`)
+    .join('   ');
+
+  roundRect(
+    rightX + 16,
+    48,
+    298,
+    36,
+    12,
+    'rgba(255,255,255,.08)',
+    'rgba(255,255,255,.12)',
+    1
+  );
+
+  text(
+    activePotions || 'No active potions',
+    rightX + 165,
+    72,
+    15,
+    'center',
+    activePotions ? '#ffdd59' : '#888'
+  );
+
+
+  // =====================================================
+  // TOP BUTTON ROW
+  // =====================================================
+
+  const btnW = 90;
+  const gap = 12;
+  const row1Y = 102;
+
+  addButton(
+    rightX + 16,
+    row1Y,
+    btnW,
+    42,
+    'Shop',
+    ()=>game.panel='shop',
+    '#0fbcf9'
+  ).draw('#0fbcf9');
+
+  addButton(
+    rightX + 16 + btnW + gap,
+    row1Y,
+    btnW,
+    42,
+    'Maps',
+    ()=>game.panel='maps',
+    '#00cec9'
+  ).draw('#00cec9');
+
+  addButton(
+    rightX + 16 + (btnW + gap) * 2,
+    row1Y,
+    btnW,
+    42,
+    'Rods',
+    ()=>game.panel='rods',
+    '#fdcb6e'
+  ).draw('#fdcb6e');
+
+
+  // =====================================================
+  // BOTTOM BUTTON ROW
+  // =====================================================
+
+  const row2Y = 154;
+
+  addButton(
+    rightX + 16,
+    row2Y,
+    140,
+    42,
+    'Bait',
+    ()=>game.panel='bait',
+    '#a29bfe'
+  ).draw('#a29bfe');
+
+  addButton(
+    rightX + 174,
+    row2Y,
+    140,
+    42,
+    'Quests',
+    ()=>game.panel='quests',
+    '#55efc4'
+  ).draw('#55efc4');
 }
 function drawPanel(){ if(!game.panel) return; ctx.fillStyle='rgba(0,0,0,.45)'; ctx.fillRect(0,0,W,H); roundRect(175,95,1160,670,30,'#102a43','rgba(255,255,255,.55)',5); addButton(1250,120,58,58,'X',()=>game.panel=null,'#ff4757').draw('#ff4757'); text(game.panel.toUpperCase(),W/2,145,48,'center');
   if(game.panel==='shop') drawShopPanel(); if(game.panel==='maps') drawMapsPanel(); if(game.panel==='rods') drawRodsPanel(); if(game.panel==='bait') drawBaitPanel(); if(game.panel==='quests') drawQuestsPanel(); }
