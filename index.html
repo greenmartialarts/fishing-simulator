@@ -1030,7 +1030,7 @@ function drawHUD(){
 
   roundRect(
     14, 14,
-    360, 135,
+    470, 150,
     20,
     'rgba(0,0,0,.38)',
     'rgba(255,255,255,.22)',
@@ -1040,13 +1040,29 @@ function drawHUD(){
   // Title
   text(currentMap().name, 34, 42, 28, 'left', '#9effff');
 
-  // Stats
+  // LEFT COLUMN
   text(`Coins: ${Math.floor(game.coins)}`, 34, 78, 24);
   text(`Score: ${game.score}`, 34, 108, 22);
-  text(`Combo: ${game.combo.toFixed(1)}x`, 210, 108, 22, 'left', '#fff16a');
+  text(`Gems: ${game.gems || 0}`, 34, 138, 22, 'left', '#74b9ff');
 
-  // Optional small caught stat
-  text(`Caught: ${game.caught}`, 210, 78, 20, 'left', '#dfe6e9');
+  // RIGHT COLUMN (shifted further right)
+  text(
+    `Caught: ${game.caught}`,
+    300,
+    78,
+    20,
+    'left',
+    '#dfe6e9'
+  );
+
+  text(
+    `Combo: ${game.combo.toFixed(1)}x`,
+    300,
+    108,
+    22,
+    'left',
+    '#fff16a'
+  );
 
 
   // =====================================================
